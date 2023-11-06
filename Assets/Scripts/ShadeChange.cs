@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ShadeChange : MonoBehaviour
 {
-    Animation Shade;
+    Animation _shade;
 
     public void shadeChange()
     {
-        Shade = GetComponent<Animation>();
-        Shade.Play();
-       
+        _shade = GetComponent<Animation>();
+        _shade.Play();
     }
 }

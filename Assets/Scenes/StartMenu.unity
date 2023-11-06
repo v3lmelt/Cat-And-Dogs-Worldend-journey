@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 77072054}
   - component: {fileID: 77072056}
   m_Layer: 5
-  m_Name: QUIT
+  m_Name: Btn_Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 77933097}
   - component: {fileID: 77933099}
   m_Layer: 5
-  m_Name: SETTING
+  m_Name: Btn_Setting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 357724203}
   - component: {fileID: 357724205}
   m_Layer: 5
-  m_Name: GAME START
+  m_Name: Btn_GameStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 1109977684}
   - component: {fileID: 1109977683}
   m_Layer: 5
-  m_Name: StartMenu
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
