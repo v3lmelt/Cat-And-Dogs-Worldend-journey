@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 127547138299618831}
   - component: {fileID: 4107110869493427613}
   - component: {fileID: 5338556132760074897}
-  - component: {fileID: 5838266753141984981}
-  - component: {fileID: 975836967294241951}
+  - component: {fileID: 4613194587426583303}
+  - component: {fileID: 4890382340028598302}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -133,6 +133,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   airWalkSpeed: 3
+  jumpImpulse: 10
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -294,7 +295,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012512445, y: -0.08758688}
   m_Size: {x: 1.7247262, y: 1.7247267}
   m_Direction: 0
---- !u!114 &5838266753141984981
+--- !u!114 &4613194587426583303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,32 +304,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8860777969687601505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894921f10855d3a4ca6a9526a1d26d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageableHit:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHealth: 100
-  _health: 100
-  _isAlive: 1
-  isInvincible: 0
-  invincibilityTime: 0.25
---- !u!114 &975836967294241951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8860777969687601505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c4a588a92b00f4f90402235ffaae6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fb6031846c5fd441bece0b06611313d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
     useTriggers: 0
-    useLayerMask: 1
+    useLayerMask: 0
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
@@ -346,3 +327,23 @@ MonoBehaviour:
   _isGrounded: 0
   _isOnWall: 0
   _isOnCeiling: 0
+--- !u!114 &4890382340028598302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860777969687601505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e5bec6d4615ef408d02ec3fa948505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25

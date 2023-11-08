@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 6802933917586328904}
   - component: {fileID: 2494902958597582646}
   - component: {fileID: 3535703229468682582}
-  - component: {fileID: 3257478934147523063}
-  - component: {fileID: 3640613644874627499}
+  - component: {fileID: 7816693514614520210}
+  - component: {fileID: 966884256881940389}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -327,10 +327,11 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   airWalkSpeed: 5
+  jumpImpulse: 10
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
---- !u!114 &3257478934147523063
+--- !u!114 &7816693514614520210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -339,44 +340,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2619111352904565243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894921f10855d3a4ca6a9526a1d26d64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageableHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: onHit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _maxHealth: 100
-  _health: 100
-  _isAlive: 1
-  isInvincible: 0
-  invincibilityTime: 0.25
---- !u!114 &3640613644874627499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2619111352904565243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1c4a588a92b00f4f90402235ffaae6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5fb6031846c5fd441bece0b06611313d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   castFilter:
     useTriggers: 0
-    useLayerMask: 1
+    useLayerMask: 0
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
@@ -394,3 +363,23 @@ MonoBehaviour:
   _isGrounded: 0
   _isOnWall: 0
   _isOnCeiling: 0
+--- !u!114 &966884256881940389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619111352904565243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e5bec6d4615ef408d02ec3fa948505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 100
+  _health: 100
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25
