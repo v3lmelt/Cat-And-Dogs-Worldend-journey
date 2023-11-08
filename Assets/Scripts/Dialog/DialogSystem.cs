@@ -92,11 +92,14 @@ public class DialogSystem : MonoBehaviour
         switch (_textList[index].Trim())
         {
             case "A":
-                Console.WriteLine(_textList[index]);
                 faceImage.sprite = player;
                 index++;
                 break;
             case "B":
+                faceImage.sprite = guider;
+                index++;
+                break;
+            case "C":
                 faceImage.sprite = guider;
                 index++;
                 break;
