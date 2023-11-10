@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3535703229468682582}
   - component: {fileID: 7816693514614520210}
   - component: {fileID: 966884256881940389}
+  - component: {fileID: 9093395588909240020}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Player
@@ -383,3 +384,19 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
+--- !u!114 &9093395588909240020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619111352904565243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4395ff20c2814c6dba9594f4e6832a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpBuffDuration: 10
+  speedBuffDuration: 10
+  jumpImpulseBuffAmount: 5
+  speedBuffAmount: 5

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5338556132760074897}
   - component: {fileID: 4613194587426583303}
   - component: {fileID: 4890382340028598302}
+  - component: {fileID: 6456632841659389049}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Player
@@ -347,3 +348,19 @@ MonoBehaviour:
   _isAlive: 1
   isInvincible: 0
   invincibilityTime: 0.25
+--- !u!114 &6456632841659389049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860777969687601505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4395ff20c2814c6dba9594f4e6832a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpBuffDuration: 10
+  speedBuffDuration: 10
+  jumpImpulseBuffAmount: 5
+  speedBuffAmount: 5
