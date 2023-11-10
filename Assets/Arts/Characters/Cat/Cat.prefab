@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 966884256881940389}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2619111352904565243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.154386, y: -2.816093, z: 8.929304}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.25
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3535703229468682582}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: onMove
         m_Mode: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3535703229468682582}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: onJump
         m_Mode: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/2]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3535703229468682582}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: onAttack
         m_Mode: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
     m_ActionName: Player/Attack[/Keyboard/1]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3535703229468682582}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: onRun
         m_Mode: 0
@@ -324,9 +324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def442d735859af4db069d1c44c148ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 10
-  airWalkSpeed: 5
+  walkSpeed: 10
+  runSpeed: 15
+  airWalkSpeed: 8
   jumpImpulse: 10
   _isMoving: 0
   _isRunning: 0

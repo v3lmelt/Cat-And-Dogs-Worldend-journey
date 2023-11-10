@@ -9,6 +9,5 @@ public class JumpToAnotherScene : MonoBehaviour
     public void Jump()
     {
         SceneManager.LoadScene("Background Story");
-        
     }
 }
