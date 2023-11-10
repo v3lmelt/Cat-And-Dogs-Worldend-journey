@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class JumpToAnotherScene : MonoBehaviour
+public class JumpToBackgroundStory : MonoBehaviour
 {
-    
     public void Jump()
     {
-        SceneManager.LoadScene("Background Story");
+      LoadSceneManager.Instance.LoadScene("Background Story");
+        
     }
 }
