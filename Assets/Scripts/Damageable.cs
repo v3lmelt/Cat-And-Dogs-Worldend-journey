@@ -9,6 +9,11 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, Vector2> damageableHit;
     Animator animator;
 
+    private void FixedUpdate()
+    {
+        if (IsAlive == false)
+        GameManager.Instance.Dead();
+    }
     [SerializeField]
     private int _maxHealth = 100;
     public int MaxHealth
