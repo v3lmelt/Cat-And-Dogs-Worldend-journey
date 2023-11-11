@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1502278773552138979}
   - component: {fileID: 4673804864988423731}
   - component: {fileID: 1648144538463770134}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Coin
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1775470187
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1423026285, guid: 66bbcd100f7f09c4799d5b1177e4aebe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 6366805265611638024}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1e73697212379fb458cc9ed1161ca195, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6386a869388da3f45861b6c8e1f02deb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
