@@ -11,7 +11,8 @@ public class Damageable : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsAlive == false)
+        if (IsAlive == false&&gameObject.tag == "Player")
+
         GameManager.Instance.Dead();
     }
     [SerializeField]
