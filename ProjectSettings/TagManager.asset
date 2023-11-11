@@ -13,14 +13,14 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - Background
   - LevelBorder
   - Player
-  - Enemy
-  - PlayerHitBox
-  - EnemyHitBox
-  - GroundDetection
-  - Pickup
+  - Item
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
