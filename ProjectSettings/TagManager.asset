@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Trap
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -11,25 +13,14 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< Updated upstream
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-=======
-  - Ground
+  - Background
   - LevelBorder
-  - Player
-  - Enemy
-  - PlayerHitBox
-  - EnemyHitBox
-  - GroundDetection
-  - Pickup
->>>>>>> Stashed changes
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -52,13 +43,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< Updated upstream
-=======
   - name: Background
     uniqueID: 168902333
-    locked: 0
-  - name: Ground
-    uniqueID: 2209829987
     locked: 0
   - name: Item
     uniqueID: 2519497109
@@ -66,4 +52,3 @@ TagManager:
   - name: Player
     uniqueID: 2373038915
     locked: 0
->>>>>>> Stashed changes
