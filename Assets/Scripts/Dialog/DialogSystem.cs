@@ -1,35 +1,36 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class DialogSystem : MonoBehaviour
 {
-    [Header("UI×é¼ş")]
-    public TextMeshProUGUI textLabel;
-    //public Text textLabel;//½«Text×é¼şÍÏ×§ÖÁ´Ë
-    public Image faceImage;//Õâ¸öÊÇÊµÏÖÎÄ±¾¿òÖĞ¿ÉÒÔÔÚÃş¸öÎ»ÖÃÏÔÊ¾Éè¶¨µÄ½ÇÉ«£¬½«Image×é¼şÍÏ×§ÖÁ´Ë
+    [Header("UIç»„ä»¶")]
+    public Text textLabel;//å°†Textç»„ä»¶æ‹–æ‹½è‡³æ­¤
+    public Image faceImage;//è¿™ä¸ªæ˜¯å®ç°æ–‡æœ¬æ¡†ä¸­å¯ä»¥åœ¨æ‘¸ä¸ªä½ç½®æ˜¾ç¤ºè®¾å®šçš„è§’è‰²ï¼Œå°†Imageç»„ä»¶æ‹–æ‹½è‡³æ­¤
 
-    [Header("ÎÄ±¾ÎÄ¼ş")]
-    public TextAsset textFile; //ÔÚUnityÖĞ£¬½«±àĞ´µÄÎÄ±¾ÍÏ×§µ½ÕâÀï
-    public int index;//ÏÔÊ¾ÎÄ±¾¶Áµ½µÚ¼¸ĞĞ
+    [Header("æ–‡æœ¬æ–‡ä»¶")]
+    public TextAsset textFile; //åœ¨Unityä¸­ï¼Œå°†ç¼–å†™çš„æ–‡æœ¬æ‹–æ‹½åˆ°è¿™é‡Œ
+    public int index;//æ˜¾ç¤ºæ–‡æœ¬è¯»åˆ°ç¬¬å‡ è¡Œ
     public float textSpeed;
 
-    [Header("Í·Ïñ")]
-    public Sprite Player,Guider;
+    [Header("å¤´åƒ")]
+    public Sprite player;
 
-    public bool cancleTyping;//È¡ÏûÖğ×ÖÊäÈë
-    public bool textFinished;//ÎÄ±¾Êä³öÍê³É
+    [Header("å¤´åƒ")]
+    public Sprite guider;
 
-    //´æ´¢ÎÄ±¾
-    List<string> textList = new List<string>();
+    public bool cancelTyping;//å–æ¶ˆé€å­—è¾“å…¥
+    public bool textFinished;//æ–‡æœ¬è¾“å‡ºå®Œæˆ
 
-    void Awake()
+    //å­˜å‚¨æ–‡æœ¬
+    private readonly List<string> _textList = new List<string>();
+
+    private void Awake()
     {
-        GetTextFormFilr(textFile);
+        GetTextFormFile(textFile);
     }
     private void OnEnable()
     {
@@ -40,10 +41,10 @@ public class DialogSystem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //ÊäÈë¼üÖµR½øĞĞ²Ù×÷
-        if (Input.GetKeyDown(KeyCode.R)&& index == textList.Count)
+        //è¾“å…¥é”®å€¼Rè¿›è¡Œæ“ä½œ
+        if (Input.GetKeyDown(KeyCode.R)&& index == _textList.Count)
         {
             gameObject.SetActive(false);
             index = 0;
@@ -57,46 +58,49 @@ public class DialogSystem : MonoBehaviour
         }*/
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (textFinished&& !cancleTyping)
+            if (textFinished&& !cancelTyping)
             {
                 StartCoroutine(SetTextUI());
             }
-            //Õâ¸öÒâË¼¾ÍÊÇË«»÷°´¼üR¾Í¿ÉÒÔ¿ìËÙÊµÏÖÎÄ±¾µÄÏÔÊ¾
-            else if (!textFinished && !cancleTyping)
+            //è¿™ä¸ªæ„æ€å°±æ˜¯åŒå‡»æŒ‰é”®Rå°±å¯ä»¥å¿«é€Ÿå®ç°æ–‡æœ¬çš„æ˜¾ç¤º
+            else if (!textFinished && !cancelTyping)
             {
-                cancleTyping = true;
+                cancelTyping = true;
             }
         }
     }
 
-    void GetTextFormFilr(TextAsset file)
+    private void GetTextFormFile(TextAsset file)
     {
-        textList.Clear();
+        _textList.Clear();
         index = 0;
 
-        //ÇĞ¸îÎÄ±¾Text.text£¬°´ĞĞÀ´ÇĞ¸î
+        //åˆ‡å‰²æ–‡æœ¬Text.textï¼ŒæŒ‰è¡Œæ¥åˆ‡å‰²
         var lineDate = file.text.Split('\n');
 
         foreach (var line in lineDate)
         {
-            textList.Add(line);
+            _textList.Add(line);
         }
     }
 
     IEnumerator SetTextUI()
     {
         textFinished = false;
-        textLabel.text = "";//Çå¿Õ½çÃæÏÔÊ¾µÄÎÄ±¾£¬ÒÔ±ãÆäËûÎÄ±¾µÄÏÔÊ¾
+        textLabel.text = "";//æ¸…ç©ºç•Œé¢æ˜¾ç¤ºçš„æ–‡æœ¬ï¼Œä»¥ä¾¿å…¶ä»–æ–‡æœ¬çš„æ˜¾ç¤º
         
-        switch (textList[index].Trim().ToString())
+        switch (_textList[index].Trim())
         {
             case "A":
-                Console.WriteLine(textList[index]);
-                faceImage.sprite = Player;
+                faceImage.sprite = player;
                 index++;
                 break;
             case "B":
-                faceImage.sprite = Guider;
+                faceImage.sprite = guider;
+                index++;
+                break;
+            case "C":
+                faceImage.sprite = guider;
                 index++;
                 break;
         }
@@ -108,14 +112,14 @@ public class DialogSystem : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }*/
         int letter = 0;
-        while (!cancleTyping && letter < textList[index].Length-1)
+        while (!cancelTyping && letter < _textList[index].Length-1)
         {
-            textLabel.text += textList[index][letter];
+            textLabel.text += _textList[index][letter];
             letter++;
             yield return new WaitForSeconds(textSpeed);
         }
-        textLabel.text = textList[index];
-        cancleTyping = false;
+        textLabel.text = _textList[index];
+        cancelTyping = false;
         textFinished = true;
         index++;
     } 
