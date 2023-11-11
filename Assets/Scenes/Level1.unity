@@ -1272,7 +1272,7 @@ Transform:
   m_GameObject: {fileID: 1018128711}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -91.96139, y: -7.30506, z: -1.0706959}
+  m_LocalPosition: {x: -91.96139, y: -7.30507, z: -1.0706959}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1669,6 +1669,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1506070861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1805084327753593501, guid: 911d574d664d4e64b8436b8f3e4a2064, type: 3}
+  m_PrefabInstance: {fileID: 7861766650923957174}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1506070867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506070861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22614d5c8ef1f5d4496bef378bf09239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1590435363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2800,10 +2817,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 474163865026165911, guid: 911d574d664d4e64b8436b8f3e4a2064, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1805084327753593501, guid: 911d574d664d4e64b8436b8f3e4a2064, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1506070867}
   m_SourcePrefab: {fileID: 100100000, guid: 911d574d664d4e64b8436b8f3e4a2064, type: 3}
 --- !u!1001 &7940335647191162999
 PrefabInstance:

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2075869635917268273}
   - component: {fileID: 3033363857064550350}
   - component: {fileID: 4458930132326576148}
-  - component: {fileID: 474163865026165911}
+  - component: {fileID: 1484489360361928349}
   m_Layer: 0
   m_Name: SpeedPotion
   m_TagString: Item
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatLength: 0.8
   floatRange: 0.25
---- !u!114 &474163865026165911
+--- !u!114 &1484489360361928349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1805084327753593501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e94090164b9931f448769d0d4f4038c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 22614d5c8ef1f5d4496bef378bf09239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
