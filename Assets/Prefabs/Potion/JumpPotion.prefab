@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3383334106336757706}
   - component: {fileID: 8716526973623341209}
   - component: {fileID: 8699767088422050427}
-  - component: {fileID: 5531350543506707890}
+  - component: {fileID: 9064905900256377891}
   m_Layer: 0
   m_Name: JumpPotion
   m_TagString: Item
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatLength: 0.8
   floatRange: 0.25
---- !u!114 &5531350543506707890
+--- !u!114 &9064905900256377891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4767002296255881791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747d5047acc64788af4924f0e8a9d0d8, type: 3}
+  m_Script: {fileID: 11500000, guid: ed923ba9a6494aae8541bb52a8ed5a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
