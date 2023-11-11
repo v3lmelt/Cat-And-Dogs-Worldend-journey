@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2075869635917268273}
   - component: {fileID: 3033363857064550350}
   - component: {fileID: 4458930132326576148}
-  - component: {fileID: 8287874044925944895}
+  - component: {fileID: 474163865026165911}
   m_Layer: 0
   m_Name: SpeedPotion
   m_TagString: Item
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1775470187
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4c62fc3bf0e44db4e8da07eacad44f1b, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatLength: 0.8
   floatRange: 0.25
---- !u!114 &8287874044925944895
+--- !u!114 &474163865026165911
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1805084327753593501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d1fd3ade2e519344b604fd8f1bae384, type: 3}
+  m_Script: {fileID: 11500000, guid: e94090164b9931f448769d0d4f4038c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
