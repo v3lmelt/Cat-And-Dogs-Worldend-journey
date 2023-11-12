@@ -23,4 +23,6 @@ internal class AnimationStrings
     internal static string lockVelocity = "lockVelocity";
     internal static string attackCooldown = "attackCooldown";
     internal static string rangedAttackTrigger = "rangedAttack";
+    internal static string hasMp = "hasMp";
+    internal static string dash = "dash";
 }

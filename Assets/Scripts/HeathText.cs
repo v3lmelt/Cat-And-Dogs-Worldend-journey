@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class HeathText : MonoBehaviour
 {
-    public Vector3 moveSpeed = new Vector3(0,75,0);
+    public Vector3 moveSpeed = new Vector3(0, 75, 0);
     public float timeToFade = 1f;
 
     RectTransform textTransform;
@@ -20,6 +20,13 @@ public class HeathText : MonoBehaviour
         textTransform = GetComponent<RectTransform>();
         textMeshPro = GetComponent<TextMeshProUGUI>();
         startColor = textMeshPro.color;
+        //SetStartColor(startColor);
+
+    }
+
+    public void SetStartColor(Color color)
+    {
+        startColor = color;
     }
 
     private void Update()
