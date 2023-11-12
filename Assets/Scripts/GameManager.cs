@@ -9,9 +9,7 @@ public class GameManager : Singleton<GameManager>
     public Vector3 RemakePoint;
     
     public GameObject Cat;
-    
     public GameObject Dog;
-
     private void Start()
     {
         DontDestroyOnLoad(this);

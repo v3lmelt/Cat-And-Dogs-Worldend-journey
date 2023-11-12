@@ -8,6 +8,5 @@ public class JumpToBackgroundStory : MonoBehaviour
     public void Jump()
     {
       LoadSceneManager.Instance.LoadScene("Background Story");
-        
     }
 }
