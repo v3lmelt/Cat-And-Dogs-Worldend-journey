@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
@@ -15,19 +15,19 @@ public class LoadSceneManager:Singleton<LoadSceneManager>
     {
         
         SceneManager.LoadScene(sceneName);
-        Debug.Log("ÕÒÃ¨¹·");
+        Debug.Log("æ‰¾çŒ«ç‹—");
         GameManager.Instance.FindCatAndDog();
         //if (GameManager.Instance.Cat != null) {
-        //    Debug.Log("yes");                     //Êä³ö½á¹ûÖ¤Ã÷³¡¾°×ª»»ÁËÖ®ºó Ã¨Ã¨×é¼ş²»ÊÇ¿ÕµÄ ËµÃ÷»¹Ã»ÓĞ×ª»»³¡¾°
+        //    Debug.Log("yes");                     //è¾“å‡ºç»“æœè¯æ˜åœºæ™¯è½¬æ¢äº†ä¹‹å çŒ«çŒ«ç»„ä»¶ä¸æ˜¯ç©ºçš„ è¯´æ˜è¿˜æ²¡æœ‰è½¬æ¢åœºæ™¯
         //}
         //else { Debug.Log("no"); }
 
-        //²âÊÔÖ¤Ã÷      ËäÈ»ÕÒÃ¨¹·´úÂëĞ´ÔÚloadSceneÏÂÃæ µ«Êµ¼ÊÉÏËäÈ»LoadSceneÖ´ĞĞÍêÁË Ã¨¹·Ã»ÓĞÕÒµ½ ËµÃ÷³¡¾°´ËÊ±È´»¹Ã»ÓĞ×ª»» Ô­ÒòÎ´Öª
+        //æµ‹è¯•è¯æ˜      è™½ç„¶æ‰¾çŒ«ç‹—ä»£ç å†™åœ¨loadSceneä¸‹é¢ ä½†å®é™…ä¸Šè™½ç„¶LoadSceneæ‰§è¡Œå®Œäº† çŒ«ç‹—æ²¡æœ‰æ‰¾åˆ° è¯´æ˜åœºæ™¯æ­¤æ—¶å´è¿˜æ²¡æœ‰è½¬æ¢ åŸå› æœªçŸ¥
 
        // StartCoroutine(Initialization());
 
-    }//ÄáÂêÕâÀïÓÃĞ¯³Ì»¹ÊÇÓĞÎÊÌâ ÎÒÖ±½ÓÍùGameManagerµÄUpdataÀï·ÅFindCatAndDog¾Í¿ÉÒÔ 
-    //IEnumerator Initialization() //0.1ÃëºóÔÙÖ´ĞĞ
+    }//å°¼ç›è¿™é‡Œç”¨æºç¨‹è¿˜æ˜¯æœ‰é—®é¢˜ æˆ‘ç›´æ¥å¾€GameManagerçš„Updataé‡Œæ”¾FindCatAndDogå°±å¯ä»¥ 
+    //IEnumerator Initialization() //0.1ç§’åå†æ‰§è¡Œ
     //{
     //    yield return new WaitForSeconds(0.1f);
     //   GameManager.Instance.FindCatAndDog();
