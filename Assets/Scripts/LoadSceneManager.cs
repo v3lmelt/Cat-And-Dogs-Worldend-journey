@@ -15,7 +15,6 @@ public class LoadSceneManager:Singleton<LoadSceneManager>
     {
         
         SceneManager.LoadScene(sceneName);
-        Debug.Log("找猫狗");
         GameManager.Instance.FindCatAndDog();
         //if (GameManager.Instance.Cat != null) {
         //    Debug.Log("yes");                     //输出结果证明场景转换了之后 猫猫组件不是空的 说明还没有转换场景

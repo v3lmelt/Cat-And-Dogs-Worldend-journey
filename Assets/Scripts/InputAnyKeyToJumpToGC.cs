@@ -9,7 +9,7 @@ public class InputAnyKeyToJumpToGC : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            gameObject.GetComponent<JumpToGameplayScene>().Jump();
+            gameObject.GetComponent<JumpToOtherScene>().Jump();
         }
     }
 }
