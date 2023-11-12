@@ -6,13 +6,21 @@ public class GameManager : Singleton<GameManager>
 {
     
     public string RemakeSceneName;
-    public Transform RemakePoint;
+    public Vector3 RemakePoint;
+    
     public GameObject Cat;
+    
     public GameObject Dog;
-    protected override void Awake()
+
+    private void Start()
     {
-       base.Awake();
         DontDestroyOnLoad(this);
+        FindCatAndDog();
+    }
+    public void FindCatAndDog()
+    {
+        Cat = GameObject.Find("Cat");
+        Dog = GameObject.Find("Dog");
     }
     public void Dead()
     {
@@ -26,20 +34,29 @@ public class GameManager : Singleton<GameManager>
     IEnumerator WaitToRemake()
     {
         Debug.Log("进入了携程");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f); 
         if (SceneManager.GetActiveScene().name!=RemakeSceneName)
         {
         LoadSceneManager.Instance.LoadScene(RemakeSceneName);
+         yield return new WaitForSeconds(0.001f); //Wait期间会自动调用Updata函数 这里直接写Instance.FindCatAndDog()是找不到猫狗的 
+            Cat.transform.position = RemakePoint;
+            Dog.transform.position = RemakePoint;
          }
-        
-        Cat.GetComponent<Damageable>().IsAlive = true;
+        else
+        {
+         Cat.GetComponent<Damageable>().IsAlive = true;
         Dog.GetComponent<Damageable>().IsAlive = true;
 
         Cat.gameObject.SetActive(true);
         Dog.gameObject.SetActive(true);
-        Cat.transform.position = RemakePoint.position;
-        Dog.transform.position= RemakePoint.position;
+        Cat.transform.position = RemakePoint;
+        Dog.transform.position= RemakePoint;
+        }
+        
     }
 
-   
+    private void Update()
+    {
+       FindCatAndDog();    
+    }
 }
