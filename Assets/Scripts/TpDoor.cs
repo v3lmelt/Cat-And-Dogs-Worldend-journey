@@ -15,8 +15,6 @@ public class TpDoor : MonoBehaviour
         Icon.SetActive(true);
         interectable = true;
         }
-        
-
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
