@@ -21,8 +21,8 @@ TagManager:
   - EnemyHitBox
   - GroundDetection
   - Pickup
-  - 
-  - 
+  - DashBox
+  - Obstacle
   - 
   - 
   - 
