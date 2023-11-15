@@ -20,6 +20,6 @@ public class Obstacle : MonoBehaviour
  
     public void onHit(int damage, Vector2 knockback)
     {
-        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+       //
     }
 }
