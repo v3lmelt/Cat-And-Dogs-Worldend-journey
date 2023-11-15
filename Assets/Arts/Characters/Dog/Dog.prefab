@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8886950591533512450}
   - component: {fileID: 3113062835436609101}
-  - component: {fileID: 4196202821758201581}
+  - component: {fileID: 4721264721563014896}
   m_Layer: 10
   m_Name: DashAttact
   m_TagString: Untagged
@@ -83,7 +83,7 @@ PolygonCollider2D:
       - {x: 0.58778536, y: -0.80901694}
       - {x: 1.4595294, y: -0.21534544}
   m_UseDelaunayMesh: 0
---- !u!114 &4196202821758201581
+--- !u!114 &4721264721563014896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,12 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6744343122364047630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d452ad39f7b70f488437a8416698df6, type: 3}
+  m_Script: {fileID: 11500000, guid: f9f856017a7376542b4946a96a9b6f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   restoreMp: 10
-  attackDamage: 30
-  knockback: {x: 7, y: 0}
+  attackDamage: 10
+  knockback: {x: 0, y: 0}
 --- !u!1 &7280482244730098021
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6167540720927969035}
   - component: {fileID: 6822078374934921633}
-  - component: {fileID: 3023294113982016455}
+  - component: {fileID: 6660980295667776276}
   m_Layer: 10
   m_Name: AttackZone
   m_TagString: Untagged
@@ -181,7 +181,7 @@ PolygonCollider2D:
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
   m_UseDelaunayMesh: 0
---- !u!114 &3023294113982016455
+--- !u!114 &6660980295667776276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,12 +190,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7280482244730098021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d452ad39f7b70f488437a8416698df6, type: 3}
+  m_Script: {fileID: 11500000, guid: f9f856017a7376542b4946a96a9b6f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   restoreMp: 10
-  attackDamage: 20
-  knockback: {x: 3, y: 1}
+  attackDamage: 10
+  knockback: {x: 0, y: 0}
 --- !u!1 &8860777969687601505
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +439,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e7e42bfb-642a-46f7-8c46-ebb008031e56
     m_ActionName: Player/Dash[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a0049bd2-ecca-49e8-8962-7ef6595fb040
+    m_ActionName: Player/Fire[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
