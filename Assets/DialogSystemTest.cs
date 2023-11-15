@@ -12,6 +12,6 @@ public class DialogSystemTest : MonoBehaviour
     public TextAsset dialogText;
     private void Start()
     {
-        DialogSystemNew.Instance.InitDialogSystem(dialogText, transform, textSpeed);
+        DialogSystemNew.Instance.InitDialogSystem(dialogText, transform.position, textSpeed);
     }
 }
