@@ -43,5 +43,13 @@ public class Attack : MonoBehaviour
                 }
             }
         }
+
+        ObstacleDamage obstacleDamage = collision.GetComponent<ObstacleDamage>();
+
+        if (obstacleDamage != null)
+        {
+            Vector2 deliveredKnockback = new Vector2(0,0);
+            obstacleDamage.Hit(attackDamage, deliveredKnockback, DamageType.Melee);
+        }
     }
 }
