@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trap
   - Item
+  - Player_cat
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - GroundDetection
   - Pickup
   - DashBox
-  - 
+  - Trap
   - 
   - 
   - 
