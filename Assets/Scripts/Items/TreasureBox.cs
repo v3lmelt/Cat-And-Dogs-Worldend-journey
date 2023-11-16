@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cainos.PixelArtPlatformer_VillageProps;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 public class TreasureBox : MonoBehaviour
 {
     // 要生成的物品
@@ -19,9 +23,12 @@ public class TreasureBox : MonoBehaviour
     public float leftBorder = -1.0f;
     [Tooltip("右边界，必须为正值")]
     public float rightBorder = 1.0f;
+
+    [Tooltip("是否为怪物箱, 若为怪物箱的话所有生成的物品应当都为怪物")] 
+    public bool isMonsterBox = false;
     
     private Animator _animator;
-
+    
     private float _timer;
     private bool _hasOpened;
 
@@ -31,10 +38,15 @@ public class TreasureBox : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        if(isMonsterBox) _animator.SetTrigger(ChestAnimationStrings.monsterTrigger);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 只能是玩家捡到宝箱
-        if (!other.gameObject.CompareTag("Player") || _hasOpened) return;
+        if (!Util.ComparePlayerTag(other.gameObject) || _hasOpened) return;
         // 捡到宝箱后触发动画
         _animator.SetTrigger(ChestAnimationStrings.openTrigger);
         _hasOpened = true;
@@ -96,6 +108,5 @@ public class TreasureBox : MonoBehaviour
                 spawnedItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(xForce, yForce), ForceMode2D.Impulse);
             }
         }
-
     }
 }

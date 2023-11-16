@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 只有玩家能拾取硬币
-        if (!other.gameObject.CompareTag("Player")) return;
+        if (!Util.ComparePlayerTag(other.gameObject)) return;
         Destroy(gameObject);
     }
 }

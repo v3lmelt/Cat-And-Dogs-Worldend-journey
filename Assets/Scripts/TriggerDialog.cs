@@ -28,13 +28,13 @@ public class TriggerDialog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Player")) return;
+        if (!Util.ComparePlayerTag(other.gameObject)) return;
         _playerInZone = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Player")) return;
+        if (!Util.ComparePlayerTag(other.gameObject)) return;
         _playerInZone = false;
         
         // 强制取消对话
