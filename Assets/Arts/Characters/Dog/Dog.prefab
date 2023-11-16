@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2068040556402773700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4361722245941562231}
+  m_Layer: 0
+  m_Name: RangedAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4361722245941562231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068040556402773700}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.73, y: 1.56, z: -0.08778183}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1182959482542557462}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6744343122364047630
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,6 +246,7 @@ GameObject:
   - component: {fileID: 4613194587426583303}
   - component: {fileID: 4890382340028598302}
   - component: {fileID: 6456632841659389049}
+  - component: {fileID: 7427907962372896170}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Player
@@ -237,6 +269,7 @@ Transform:
   m_Children:
   - {fileID: 6167540720927969035}
   - {fileID: 8886950591533512450}
+  - {fileID: 4361722245941562231}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8712821632772044462
@@ -439,10 +472,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e7e42bfb-642a-46f7-8c46-ebb008031e56
     m_ActionName: Player/Dash[/Keyboard/c]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a0049bd2-ecca-49e8-8962-7ef6595fb040
-    m_ActionName: Player/Fire[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -698,3 +727,17 @@ MonoBehaviour:
   speedBuffDuration: 10
   jumpImpulseBuffAmount: 5
   speedBuffAmount: 5
+--- !u!114 &7427907962372896170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860777969687601505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4979a06a12040d4fb94576c47939706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchPoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}

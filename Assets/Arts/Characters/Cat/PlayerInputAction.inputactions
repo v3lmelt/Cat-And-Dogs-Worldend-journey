@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RangedAttack",
+                    "type": "Button",
+                    "id": "f7fd5556-d0d1-4d32-98d9-d1b3a4d86643",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -192,6 +201,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed053ce7-9874-4cab-be60-724c6af8ce00",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RangedAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
