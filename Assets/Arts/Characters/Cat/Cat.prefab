@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 9093395588909240020}
   m_Layer: 8
   m_Name: Cat
-  m_TagString: Player
+  m_TagString: Player_cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 2619111352904565243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: -2.12, y: -14.61, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -290,7 +290,19 @@ MonoBehaviour:
     m_ActionId: 5b4a45e2-e2aa-447a-a4a5-d6549a1a0995
     m_ActionName: Player/Run[/Keyboard/0]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3535703229468682582}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: onRangedAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f7fd5556-d0d1-4d32-98d9-d1b3a4d86643
     m_ActionName: Player/RangedAttack[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
@@ -360,7 +372,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 503
+      m_Bits: 375
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -385,7 +397,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageableHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3535703229468682582}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: onHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   damageableDeath:
     m_PersistentCalls:
       m_Calls: []
