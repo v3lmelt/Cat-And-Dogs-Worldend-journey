@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3033363857064550350}
   - component: {fileID: 4458930132326576148}
   - component: {fileID: 1484489360361928349}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SpeedPotion
   m_TagString: Item
   m_Icon: {fileID: 0}
