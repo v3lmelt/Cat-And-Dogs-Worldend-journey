@@ -3,7 +3,7 @@ guid: 5fe5454ec8605de43809133b020d1b69
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -1983,98 +2002,97 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileGround8: 722760899
-      TileBackGround3: 1918327960
-      TileBackGround5: -1916031187
-      TileGround26: 1117495425
-      Tree4: 744591045
-      TileFence2: 1627972409
-      TileBackGround11: 769105267
-      TileFence5: 1952543706
-      TileBackGround6: 162031014
-      TilePlant11: 362551460
-      TileBackGround10: 1944438842
-      TileFence3: -1896481790
-      TileGround18: 747311438
+      Background1: -1306090582
+      Background2: 899480125
+      Background3: 1096680104
+      Background4: -1042382002
+      Background5: -44259460
+      Plant1: -677210768
+      Plant2: 1637868511
+      Plant3: 2018053615
+      Plant4: -400365580
+      Plant5: -116768579
+      Stone1: 1746087828
+      Stone2: -2145294881
+      Stone3: -1019068024
+      Stone4: 539778625
+      Stone5: -1492854174
       Stone6: 1729978713
+      Table1: 1652771774
+      Table2: 1074053915
+      TileBackGround1: -1208120647
+      TileBackGround10: 1944438842
+      TileBackGround11: 769105267
+      TileBackGround12: -1734095765
+      TileBackGround13: -1872998437
+      TileBackGround2: -1746372180
+      TileBackGround3: 1918327960
+      TileBackGround4: -786457429
+      TileBackGround5: -1916031187
+      TileBackGround6: 162031014
+      TileBackGround7: 1521889818
       TileBackGround8: -303487647
-      TileGround21: -1724452651
-      TileGround28: -2012131973
-      TilePlant9: -1603182679
+      TileBackGround9: -979371680
+      TileFence1: -2063355609
+      TileFence2: 1627972409
+      TileFence3: -1896481790
+      TileFence4: 1043207387
+      TileFence5: 1952543706
+      TileFence6: -454810601
       TileGround1: 372390009
       TileGround10: -712913760
-      Tree3: -731673611
-      Table1: 1652771774
-      TileGround23: 2097316097
-      TileGround27: 480975961
-      TileBackGround1: -1208120647
-      TileGround6: 1121040729
-      TileGround5: -1727392612
-      TileBackGround2: -1746372180
-      TilePlant8: 1713858212
-      TileGround9: -836504486
-      TilePlant10: -904001968
-      Tree6: 1892446599
-      Plant4: -400365580
-      Stone1: 1746087828
-      Stone3: -1019068024
-      TileGround2: -1766307359
-      TileBackGround12: -1734095765
-      TilePlant6: -126665124
-      TileSpikes: -762311695
-      TileGround4: -1493193376
-      TileGround14: 1773016589
-      Background1: -1306090582
-      TileGround31: 1890530403
-      TileFence4: 1043207387
-      TileGround13: -265388907
-      TileGround16: -1795069885
-      Plant1: -677210768
-      TilePlant7: -1551513061
-      TileFence6: -454810601
-      Plant2: 1637868511
-      TileGround17: 1746422869
-      TileGround22: -839192656
-      TileGround25: 1314895785
-      TileBackGround4: -786457429
-      TileGround24: -1201171171
-      Tree7: -1897294959
-      TileFence1: -2063355609
-      Tree5: -204582528
-      TilePlant12: -890148158
-      TileGround12: -1631878210
-      TileGround15: 1526828268
-      TileGround29: 2021935202
-      Tree1: 1979880157
-      TileGround20: 330263017
-      Table2: 1074053915
-      Stone4: 539778625
-      TilePlant1: -350269101
-      Background2: 899480125
-      TilePlant3: -1301984742
-      Stone2: -2145294881
-      Stone5: -1492854174
-      TileGround19: 1149072864
-      TileBackGround7: 1521889818
-      TileBackGround13: -1872998437
-      TilePlant4: 1463314744
-      TileBackGround9: -979371680
-      Background4: -1042382002
-      Plant3: 2018053615
-      Tree8: -1485331619
-      TileGround30: -1265956905
-      Background5: -44259460
-      Tree2: 1348864781
-      TileGround7: -1122151221
-      TilePlant2: 1253071671
-      Plant5: -116768579
-      Background3: 1096680104
-      TileGround3: 1809391310
-      TilePlant5: -1148973739
       TileGround11: -337102267
-  spritePackingTag: 
+      TileGround12: -1631878210
+      TileGround13: -265388907
+      TileGround14: 1773016589
+      TileGround15: 1526828268
+      TileGround16: -1795069885
+      TileGround17: 1746422869
+      TileGround18: 747311438
+      TileGround19: 1149072864
+      TileGround2: -1766307359
+      TileGround20: 330263017
+      TileGround21: -1724452651
+      TileGround22: -839192656
+      TileGround23: 2097316097
+      TileGround24: -1201171171
+      TileGround25: 1314895785
+      TileGround26: 1117495425
+      TileGround27: 480975961
+      TileGround28: -2012131973
+      TileGround29: 2021935202
+      TileGround3: 1809391310
+      TileGround30: -1265956905
+      TileGround31: 1890530403
+      TileGround4: -1493193376
+      TileGround5: -1727392612
+      TileGround6: 1121040729
+      TileGround7: -1122151221
+      TileGround8: 722760899
+      TileGround9: -836504486
+      TilePlant1: -350269101
+      TilePlant10: -904001968
+      TilePlant11: 362551460
+      TilePlant12: -890148158
+      TilePlant2: 1253071671
+      TilePlant3: -1301984742
+      TilePlant4: 1463314744
+      TilePlant5: -1148973739
+      TilePlant6: -126665124
+      TilePlant7: -1551513061
+      TilePlant8: 1713858212
+      TilePlant9: -1603182679
+      TileSpikes: -762311695
+      Tree1: 1979880157
+      Tree2: 1348864781
+      Tree3: -731673611
+      Tree4: 744591045
+      Tree5: -204582528
+      Tree6: 1892446599
+      Tree7: -1897294959
+      Tree8: -1485331619
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -6,10 +6,24 @@ public class Switch : MonoBehaviour
 {
     public GameObject Open;
     public GameObject Close;
-    public string Target; 
-    
-    private void OnTriggerStay2D(Collider2D collision)
+    public string Target;
+    bool isStay;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        isStay = true;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        isStay = false;
+    }
+    private void Update()
+    {
+        if (isStay != true)
+        {
+
+            return;
+        }
         if(Input.GetKeyDown(KeyCode.R)&&Open.activeSelf)
         {
             Open.SetActive(false);
