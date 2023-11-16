@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7154481532945958009}
-  - component: {fileID: 98090609879063552}
+  - component: {fileID: 1244934672754722774}
   - component: {fileID: 7531360811628341902}
   - component: {fileID: 1294315157601190713}
-  - component: {fileID: 8866821800868675853}
   - component: {fileID: 2775149739182320835}
-  - component: {fileID: 5410714815928270019}
-  m_Layer: 8
+  - component: {fileID: 6796359212337513578}
+  - component: {fileID: 5737508068308149602}
+  m_Layer: 9
   m_Name: FlyingEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ Transform:
   - {fileID: 6787277482812414827}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &98090609879063552
+--- !u!212 &1244934672754722774
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 111705518, guid: b74bc1b7b52e1f94389f001311748081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,41 +154,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.3111391, y: -0.19511221}
   m_Size: {x: 0.9206524, y: 1.172122}
   m_Direction: 0
---- !u!114 &8866821800868675853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75006871094230164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9828350db133c78459982068a5f82798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageableHit:
-    m_PersistentCalls:
-      m_Calls: []
-  damageableDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5410714815928270019}
-        m_TargetAssemblyTypeName: FlyingEye, Assembly-CSharp
-        m_MethodName: onDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _maxHealth: 50
-  _health: 50
-  _isAlive: 1
-  isInvincible: 0
-  invincibilityTime: 0.25
 --- !u!95 &2775149739182320835
 Animator:
   serializedVersion: 5
@@ -210,7 +175,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5410714815928270019
+--- !u!114 &6796359212337513578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,12 +184,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 75006871094230164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb58feac76c0324e8b2444d980a87ee, type: 3}
+  m_Script: {fileID: 11500000, guid: d1e5bec6d4615ef408d02ec3fa948505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  damageableDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  mpChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 100
+  _health: 100
+  _mp: 100
+  _maxMP: 100
+  MagicCost: 20
+  _hasMp: 1
+  _isAlive: 1
+  isInvincible: 0
+  invincibilityTime: 0.25
+--- !u!114 &5737508068308149602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75006871094230164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa3cbd467a440d4da9632a6fd1338ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flightSpeed: 2
   waypointReachedDistance: 0.1
-  biteDetectionZone: {fileID: 6156708018917615706}
+  biteDetectionZone: {fileID: 5897338028932686965}
   deathCollider: {fileID: 6319765108489337462}
   waypoints: []
   _hasTarget: 0
@@ -237,9 +235,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8972602857930021675}
-  - component: {fileID: 6156708018917615706}
   - component: {fileID: 211836407373021118}
-  m_Layer: 10
+  - component: {fileID: 5897338028932686965}
+  m_Layer: 11
   m_Name: AttackDetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,22 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7154481532945958009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6156708018917615706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254286465296624147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e4236cd35459f04aad8b5dec3b85d6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoCollidersRemain:
-    m_PersistentCalls:
-      m_Calls: []
-  detectedColliders: []
 --- !u!58 &211836407373021118
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -312,6 +294,22 @@ CircleCollider2D:
   m_Offset: {x: 0.41484308, y: 0.1926055}
   serializedVersion: 2
   m_Radius: 0.76668453
+--- !u!114 &5897338028932686965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254286465296624147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18484eba6f103e148b25a80ab9806dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NoCollidersRemain:
+    m_PersistentCalls:
+      m_Calls: []
+  detectedColliders: []
 --- !u!1 &1809571252358036327
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,8 +320,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6799042000429968490}
   - component: {fileID: 9050012918367163498}
-  - component: {fileID: 8357774176549615602}
-  m_Layer: 10
+  - component: {fileID: 3173639852685898423}
+  m_Layer: 11
   m_Name: BiteAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +378,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.14815855, y: -0.17592049}
   m_Size: {x: 0.7963171, y: 0.7963171}
   m_Direction: 0
---- !u!114 &8357774176549615602
+--- !u!114 &3173639852685898423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -389,9 +387,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1809571252358036327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b7659235a33d2478999743875e2f65, type: 3}
+  m_Script: {fileID: 11500000, guid: f9f856017a7376542b4946a96a9b6f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restoreMp: 10
   attackDamage: 20
   knockback: {x: 0, y: 0}
 --- !u!1 &7649556418133615837
@@ -404,7 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6787277482812414827}
   - component: {fileID: 6319765108489337462}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: DeathCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
