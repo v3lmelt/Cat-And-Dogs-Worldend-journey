@@ -1197,8 +1197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7f770fb5d233774cbfa78e3092bd90f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 0}
-  healthBarText: {fileID: 0}
+  healthSlider: {fileID: 6102627217500840827}
+  healthBarText: {fileID: 7204820933566584723}
 --- !u!1 &7477836379511691292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6737024303314335734}
   - component: {fileID: 704912521679383145}
-  - component: {fileID: 2022209845711592507}
+  - component: {fileID: 71805915277626100}
   m_Layer: 5
   m_Name: HealthBar_cat
   m_TagString: Untagged
@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2022209845711592507
+--- !u!114 &71805915277626100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1299,11 +1299,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7477836379511691292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e076238f43052fd4290f97df19440a00, type: 3}
+  m_Script: {fileID: 11500000, guid: a1adee24323721c4fba5a8743930d93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 0}
-  healthBarText: {fileID: 0}
+  healthSlider: {fileID: 704912521679383145}
+  healthBarText: {fileID: 704449926288052478}
 --- !u!1 &7734879049963173609
 GameObject:
   m_ObjectHideFlags: 0
