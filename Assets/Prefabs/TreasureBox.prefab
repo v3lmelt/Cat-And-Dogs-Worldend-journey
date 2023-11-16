@@ -129,6 +129,7 @@ MonoBehaviour:
   addForceToSpawnedItem: 0
   leftBorder: -1
   rightBorder: 1
+  isMonsterBox: 0
 --- !u!61 &1816537496640112325
 BoxCollider2D:
   m_ObjectHideFlags: 0

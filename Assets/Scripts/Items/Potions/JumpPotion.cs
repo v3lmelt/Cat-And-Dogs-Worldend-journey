@@ -10,7 +10,7 @@ public class JumpPotion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.gameObject.CompareTag("Player")) return;
+        if (!Util.ComparePlayerTag(other.gameObject)) return;
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Jump Potion!");
         PotionEvent.OnGettingJumpPotion.Invoke();
     }
