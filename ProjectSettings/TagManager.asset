@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trap
   - Item
+  - Player_cat
   layers:
   - Default
   - TransparentFX
