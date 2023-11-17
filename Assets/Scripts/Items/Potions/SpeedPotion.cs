@@ -15,6 +15,6 @@ public class SpeedPotion : MonoBehaviour
     {
         if (!Util.ComparePlayerTag(other.gameObject)) return;
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Speed Potion!");
-        PotionEvent.OnGettingSpeedPotion.Invoke();
+        other.GetComponent<PotionHandler>().OnApplySpeedBuff();
     }
 }

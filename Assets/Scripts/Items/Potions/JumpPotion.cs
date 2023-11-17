@@ -12,6 +12,6 @@ public class JumpPotion : MonoBehaviour
     {
         if (!Util.ComparePlayerTag(other.gameObject)) return;
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Jump Potion!");
-        PotionEvent.OnGettingJumpPotion.Invoke();
+        other.GetComponent<PotionHandler>().OnApplyJumpBuff();
     }
 }
