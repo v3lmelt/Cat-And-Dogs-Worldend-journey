@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PotionHandler : MonoBehaviour
 {
     private Coroutine _jumpBuffCoroutine;
     private Coroutine _speedBuffCoroutine;
-
-    private PlayerController _playerController;
+    
+    
+    [FormerlySerializedAs("_playerController")] [SerializeField]
+    private PlayerController playerController;
     
     private float _jumpBuffTimer;
     private float _speedBuffTimer;
@@ -19,12 +22,12 @@ public class PotionHandler : MonoBehaviour
 
     private void Awake()
     {
-        _playerController = GetComponent<PlayerController>();
-        PotionEvent.OnGettingJumpPotion += OnApplyJumpBuff;
-        PotionEvent.OnGettingSpeedPotion += OnApplySpeedBuff;
+        playerController = GetComponent<PlayerController>();
+        // PotionEvent.OnGettingJumpPotion += OnApplyJumpBuff;
+        // PotionEvent.OnGettingSpeedPotion += OnApplySpeedBuff;
     }
 
-    private void OnApplyJumpBuff()
+    public void OnApplyJumpBuff()
     {
         if (_jumpBuffCoroutine != null)
         {
@@ -41,18 +44,18 @@ public class PotionHandler : MonoBehaviour
 
     private IEnumerator ApplyJumpBuff()
     {
-        _playerController.jumpImpulse += jumpImpulseBuffAmount;
+        playerController.jumpImpulse += jumpImpulseBuffAmount;
         while (_jumpBuffTimer < jumpBuffDuration)
         {
             _jumpBuffTimer += Time.deltaTime;
             yield return null;
         }
-        _playerController.jumpImpulse -= jumpImpulseBuffAmount;
+        playerController.jumpImpulse -= jumpImpulseBuffAmount;
         _jumpBuffCoroutine = null;
         _jumpBuffTimer = 0f;
     }
 
-    private void OnApplySpeedBuff()
+    public void OnApplySpeedBuff()
     {
         if (_speedBuffCoroutine != null)
         {
@@ -67,13 +70,13 @@ public class PotionHandler : MonoBehaviour
 
     private IEnumerator ApplySpeedBuff()
     {
-        _playerController.walkSpeed += speedBuffAmount;
+        playerController.walkSpeed += speedBuffAmount;
         while (_speedBuffTimer < speedBuffDuration)
         {
             _speedBuffTimer += Time.deltaTime;
             yield return null;
         }
-        _playerController.walkSpeed -= speedBuffAmount;
+        playerController.walkSpeed -= speedBuffAmount;
         _speedBuffCoroutine = null;
         _speedBuffTimer = 0f;
     }

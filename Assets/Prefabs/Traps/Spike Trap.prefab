@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6936923420273611711}
   - component: {fileID: 1850444823857280005}
   - component: {fileID: 2720846482104352409}
-  - component: {fileID: 2022062425342195650}
+  - component: {fileID: 3498185481094819362}
   m_Layer: 0
   m_Name: Spike Trap
   m_TagString: Trap
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0600204, y: 1.1717024}
   m_EdgeRadius: 0
---- !u!114 &2022062425342195650
+--- !u!114 &3498185481094819362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7080234928037628529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11ac1592bcde7b047a57793bd6903769, type: 3}
+  m_Script: {fileID: 11500000, guid: 95e3e75373bbc3a46bca6c8011e8b96c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   trapDamage: 10

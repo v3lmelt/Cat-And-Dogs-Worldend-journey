@@ -308,7 +308,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7383670590052428180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +340,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLabel: {fileID: 3687476830765318816}
   avatar: {fileID: 8119918664628240848}
+  index: 0
+  hasFinishedDialog: 0
 --- !u!1 &7988935583358909587
 GameObject:
   m_ObjectHideFlags: 0
