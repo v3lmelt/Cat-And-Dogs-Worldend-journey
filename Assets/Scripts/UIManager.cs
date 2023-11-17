@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
 
         tmpText.text = damageReceived.ToString();
 
-        // »ñÈ¡ HeathText ×é¼þ
+        // ï¿½ï¿½È¡ HeathText ï¿½ï¿½ï¿½
         HeathText heathText = tmpText.GetComponent<HeathText>();
 
         switch (damageType)
@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
             case DamageType.Ranged:
                 heathText.SetStartColor(Color.blue);
                 break;
-                // ÆäËûÉËº¦ÀàÐÍµÄ´¦Àí
+                // ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ÍµÄ´ï¿½ï¿½ï¿½
         }
     }
 
@@ -65,19 +65,6 @@ public class UIManager : MonoBehaviour
     }
     public void onExitGame(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-#if (UNITY_EDITOR || DEVELOPMENT_BUILD)
-            Debug.Log(this.name + ":" + this.GetType() + ":" + System.Reflection.MethodBase.GetCurrentMethod().Name);
-#endif
 
-#if (UNITY_EDITOR)
-            UnityEditor.EditorApplication.isPlaying = false;
-#elif (UNITY_STANDALONE)
-                        Application.Quit();
-#elif (UNITY_WEBGL)
-                        SceneManager.LoadScene("QuitScene");
-#endif
-        }
     }
 }

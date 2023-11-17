@@ -590,7 +590,7 @@ MonoBehaviour:
   boolName: canMove
   updateOnState: 1
   updateOnStateMachine: 0
-  valueOnEnter: 0
+  valueOnEnter: 1
   valueOnExit: 1
 --- !u!1101 &-1420242511112244142
 AnimatorStateTransition:
@@ -632,7 +632,7 @@ MonoBehaviour:
   boolName: lockVelocity
   updateOnState: 1
   updateOnStateMachine: 0
-  valueOnEnter: 1
+  valueOnEnter: 0
   valueOnExit: 0
 --- !u!1101 &-989046114819059789
 AnimatorStateTransition:
@@ -1027,10 +1027,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1136979617020448348}
-    m_Position: {x: 430, y: 70, z: 0}
+    m_Position: {x: 430, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8817465928038777766}
-    m_Position: {x: 680, y: 150, z: 0}
+    m_Position: {x: 670, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3062005767204624016}
     m_Position: {x: 430, y: 220, z: 0}

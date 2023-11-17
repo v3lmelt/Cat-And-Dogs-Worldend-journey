@@ -14,6 +14,12 @@ public class TriggerDialog : MonoBehaviour
     [Tooltip("对话框信息创建的位移")]
     public Vector3 dialogCreatePosDelta;
     
+    [Tooltip("提示预制体")]
+    public GameObject hintPrefab;
+
+    [Tooltip("是否显示提示")] public bool showHint;
+    
+    
     [Tooltip("要加载的对话")]
     public TextAsset dialogText;
     [Tooltip("对话加载的速度")]
@@ -21,6 +27,8 @@ public class TriggerDialog : MonoBehaviour
     
     private Collider2D _collider2D;
     private bool _playerInZone;
+    private GameObject _hintObject;
+    
     private void Awake()
     {
         _collider2D = GetComponent<Collider2D>();
@@ -29,14 +37,27 @@ public class TriggerDialog : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!Util.ComparePlayerTag(other.gameObject)) return;
+        
+        if (showHint)
+        {
+            // 判断预制体是否设置
+            if(hintPrefab == null) Debug.LogError("Did not found hintPrefab, Did you forget to set?");
+            // 判断是否有提示示例
+            if(_hintObject == null) _hintObject = Instantiate(hintPrefab, transform.position + hintCreateDelta, Quaternion.identity);
+            _hintObject.SetActive(true);
+        } 
         _playerInZone = true;
     }
-
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!Util.ComparePlayerTag(other.gameObject)) return;
+        if (showHint)
+        {
+            // 判断是否有提示示例
+            if(_hintObject != null) _hintObject.SetActive(false);
+        }
         _playerInZone = false;
-        
         // 强制取消对话
         DialogSystemNew.Instance.ResetDialogSystem();
     }
