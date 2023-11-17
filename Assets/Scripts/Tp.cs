@@ -1,47 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Tp : MonoBehaviour
 {
-    public string Distnation;
-    public  bool CatReady;
-    public bool DogReady;
-    public GameObject Arrow; //有一只动物靠近时显示向右前进的箭头
+    public string destination;
+    public bool catReady;
+    public bool dogReady;
+    public GameObject arrow; //有一只动物靠近时显示向右前进的箭头
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Cat")
         {
-            CatReady = true;
-            Arrow.SetActive(true);
+            catReady = true;
+            arrow.SetActive(true);
         }
         if(collision.gameObject.name == "Dog")
         {
-            DogReady = true;
-            Arrow.SetActive(true);
+            dogReady = true;
+            arrow.SetActive(true);
 
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-        
-            CatReady = false;
-       
+            catReady = false;
         if (collision.gameObject.name == "Dog")
         {
-            DogReady = false;
+            dogReady = false;
         }
     }
     private void Update()
     {
-        if (!CatReady && !DogReady)
+        switch (catReady)
         {
-            Arrow.SetActive(false);
-        }
-        if (CatReady && DogReady)
-        {
-            LoadSceneManager.Instance.LoadScene(Distnation);
+            case false when !dogReady:
+                arrow.SetActive(false);
+                break;
+            case true when dogReady:
+                LoadSceneManager.Instance.LoadScene(destination);
+                break;
         }
     }
 }

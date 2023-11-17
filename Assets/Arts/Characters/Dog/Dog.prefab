@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 4613194587426583303}
   - component: {fileID: 4890382340028598302}
   - component: {fileID: 6456632841659389049}
-  - component: {fileID: 7427907962372896170}
+  - component: {fileID: 7074668962519961823}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Player
@@ -767,11 +767,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4395ff20c2814c6dba9594f4e6832a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   jumpBuffDuration: 10
   speedBuffDuration: 10
   jumpImpulseBuffAmount: 5
   speedBuffAmount: 5
---- !u!114 &7427907962372896170
+--- !u!114 &7074668962519961823
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

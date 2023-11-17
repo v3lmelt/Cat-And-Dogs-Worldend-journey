@@ -334,7 +334,7 @@ MonoBehaviour:
   boolName: lockVelocity
   updateOnState: 1
   updateOnStateMachine: 0
-  valueOnEnter: 1
+  valueOnEnter: 0
   valueOnExit: 0
 --- !u!1101 &-6385212008887229405
 AnimatorStateTransition:
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   boolName: canMove
   updateOnState: 1
   updateOnStateMachine: 0
-  valueOnEnter: 0
+  valueOnEnter: 1
   valueOnExit: 1
 --- !u!1101 &2398618845971469640
 AnimatorStateTransition:

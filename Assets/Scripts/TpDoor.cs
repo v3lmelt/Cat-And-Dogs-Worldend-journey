@@ -1,35 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 public class TpDoor : MonoBehaviour
 {
-    public string Distnation;
-    public GameObject Icon;
+    public string destination; 
+    public GameObject icon;
     
-    bool interectable;
+    private bool _interactable;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-        Icon.SetActive(true);
-        interectable = true;
-        }
+        if (!Util.ComparePlayerTag(collision.gameObject)) return;
+        icon.SetActive(true);
+        _interactable = true;
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-        Icon.SetActive(false);
-        interectable = false;
-        }
-        
+        if (!Util.ComparePlayerTag(collision.gameObject)) return;
+        icon.SetActive(false);
+        _interactable = false;
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (interectable&&Input.GetKeyDown(KeyCode.R))
+        if (_interactable && Input.GetKeyDown(KeyCode.R))
         {
-            LoadSceneManager.Instance.LoadScene(Distnation);
+            LoadSceneManager.Instance.LoadScene(destination);
         }
     }
 }
