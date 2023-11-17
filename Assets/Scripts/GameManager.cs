@@ -5,56 +5,64 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     
-    public string RemakeSceneName;
-    public Vector3 RemakePoint;
+    public string remakeSceneName;
+    public Vector3 remakePoint;
     
-    public GameObject Cat;
-    public GameObject Dog;
+    public GameObject cat;
+    public GameObject dog;
     private void Start()
     {
         DontDestroyOnLoad(this);
         FindCatAndDog();
     }
+
+    private void OnEnable()
+    {
+        // 订阅事件, 在场景加载的时候尝试去找猫和狗部件
+        SceneManager.sceneLoaded += OnSceneChanged;
+    }
+
+    // 
+    private void OnSceneChanged(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        FindCatAndDog();  
+    }
+    
     public void FindCatAndDog()
     {
-        Cat = GameObject.Find("Cat");
-        Dog = GameObject.Find("Dog");
+        cat = GameObject.Find("Cat");
+        dog = GameObject.Find("Dog");
     }
     public void Dead()
     {
         Debug.Log("死了");
-        Cat.gameObject.SetActive(false);
-        Dog.gameObject.SetActive(false);
+        cat.gameObject.SetActive(false);
+        dog.gameObject.SetActive(false);
    
         StartCoroutine(WaitToRemake());
     }
     //计时几秒后跳转至复活点
     IEnumerator WaitToRemake()
     {
-        Debug.Log("进入了携程");
-        yield return new WaitForSeconds(3f); 
-        if (SceneManager.GetActiveScene().name!=RemakeSceneName)
+        // Debug.Log("进入了携程");
+        // yield return new WaitForSeconds(3f); 
+        if (SceneManager.GetActiveScene().name!=remakeSceneName)
         {
-        LoadSceneManager.Instance.LoadScene(RemakeSceneName);
-         yield return new WaitForSeconds(0.001f); //Wait期间会自动调用Updata函数 这里直接写Instance.FindCatAndDog()是找不到猫狗的 
-            Cat.transform.position = RemakePoint;
-            Dog.transform.position = RemakePoint;
-         }
+            LoadSceneManager.Instance.LoadScene(remakeSceneName);
+             // yield return new WaitForSeconds(0.001f); //Wait期间会自动调用Update函数 这里直接写Instance.FindCatAndDog()是找不到猫狗的 
+                cat.transform.position = remakePoint;
+                dog.transform.position = remakePoint;
+        }
         else
         {
-         Cat.GetComponent<Damageable>().IsAlive = true;
-        Dog.GetComponent<Damageable>().IsAlive = true;
+            cat.GetComponent<Damageable>().IsAlive = true;
+            dog.GetComponent<Damageable>().IsAlive = true;
 
-        Cat.gameObject.SetActive(true);
-        Dog.gameObject.SetActive(true);
-        Cat.transform.position = RemakePoint;
-        Dog.transform.position= RemakePoint;
+            cat.gameObject.SetActive(true);
+            dog.gameObject.SetActive(true);
+            cat.transform.position = remakePoint;
+            dog.transform.position = remakePoint;
         }
-        
-    }
-
-    private void Update()
-    {
-       FindCatAndDog();    
+        yield break;
     }
 }
