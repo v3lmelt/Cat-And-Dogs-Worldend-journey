@@ -4819,7 +4819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -5074,7 +5074,7 @@ Transform:
   m_GameObject: {fileID: 1035729322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100.36372, y: -6.96001, z: -10}
+  m_LocalPosition: {x: -100.9837, y: -6.96069, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5267,6 +5267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1381574792163540959, guid: c5bff4d18f136924f9d488884944e650, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1825145936627907485, guid: c5bff4d18f136924f9d488884944e650, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13493,6 +13497,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2718677091606507550, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
   m_PrefabInstance: {fileID: 1884883502}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1884883504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4487147116907318502, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
+  m_PrefabInstance: {fileID: 1884883502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1959724885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13828,6 +13837,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7074668962519961823, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
+      propertyPath: launchPoint
+      value: 
+      objectReference: {fileID: 1884883504}
     - target: {fileID: 8712821632772044462, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
       propertyPath: m_SortingLayer
       value: 3

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7816693514614520210}
   - component: {fileID: 966884256881940389}
   - component: {fileID: 9093395588909240020}
+  - component: {fileID: 2401326158772492797}
   m_Layer: 8
   m_Name: Cat
   m_TagString: Player_cat
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2619111352904565243}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -445,6 +446,26 @@ MonoBehaviour:
   speedBuffDuration: 10
   jumpImpulseBuffAmount: 5
   speedBuffAmount: 5
+--- !u!114 &2401326158772492797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619111352904565243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e1c48f525efc04795cadea7fcfe1eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 257
+  moveLeft: 276
+  moveRight: 275
+  rangedAttack: 102
+  jump: 273
+  inputVector: {x: 0, y: 0}
+  hasDash: 0
+  dashKey: 0
 --- !u!1 &3892493761977654564
 GameObject:
   m_ObjectHideFlags: 0
