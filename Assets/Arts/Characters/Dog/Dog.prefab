@@ -767,6 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4395ff20c2814c6dba9594f4e6832a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
   jumpBuffDuration: 10
   speedBuffDuration: 10
   jumpImpulseBuffAmount: 5
