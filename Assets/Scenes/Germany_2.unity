@@ -1456,7 +1456,7 @@ Transform:
   m_GameObject: {fileID: 798903496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -149.84192, y: -21.87043, z: -10}
+  m_LocalPosition: {x: -149.66617, y: -21.94855, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2266,11 +2266,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 803705664812946001, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.2
+      value: -36.78
       objectReference: {fileID: 0}
     - target: {fileID: 803705664812946001, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.11
+      value: -27.4
       objectReference: {fileID: 0}
     - target: {fileID: 803705664812946001, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2307,6 +2307,22 @@ PrefabInstance:
     - target: {fileID: 2843350321299024589, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: m_Name
       value: Tp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799758582240650004, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
+      propertyPath: m_Size.x
+      value: 7.307783
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799758582240650004, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
+      propertyPath: m_Size.y
+      value: 4.646619
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799758582240650004, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.76445484
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799758582240650004, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.5016551
       objectReference: {fileID: 0}
     - target: {fileID: 6887331798841590270, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: arrow
@@ -6668,10 +6684,11 @@ PolygonCollider2D:
       - {x: 25.816345, y: -3.9663353}
       - {x: 25.406693, y: -3.9008675}
       - {x: 20.024849, y: -3.9116344}
-      - {x: -47.646538, y: -4.005872}
-      - {x: -47.683823, y: -12.266618}
-      - {x: -47.653053, y: -18.250246}
-      - {x: -47.51754, y: -20.96093}
+      - {x: -47.282875, y: -4.119519}
+      - {x: -47.479263, y: -12.243888}
+      - {x: -47.48719, y: -15.3279505}
+      - {x: -47.448494, y: -18.136599}
+      - {x: -47.345863, y: -21.046768}
       - {x: 79.97327, y: -21.028606}
       - {x: 79.97237, y: -12.524751}
       - {x: 80.00136, y: -4.0790176}
