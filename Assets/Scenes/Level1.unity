@@ -1006,6 +1006,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8712821632772044462, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712821632772044462, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712821632772044462, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1921928381
+      objectReference: {fileID: 0}
     - target: {fileID: 8860777969687601505, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
       propertyPath: m_Name
       value: Dog
@@ -1175,7 +1187,7 @@ Transform:
   m_GameObject: {fileID: 1018128711}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000013035611, y: -0.00000006749077, z: 4.3758525e-11, w: 1}
-  m_LocalPosition: {x: -91.86417, y: -7.3873296, z: -1.0706958}
+  m_LocalPosition: {x: -91.86226, y: -7.3873296, z: -1.0706958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

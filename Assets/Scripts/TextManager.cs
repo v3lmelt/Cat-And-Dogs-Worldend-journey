@@ -33,8 +33,13 @@ public class TextManager : Singleton<TextManager>
     }
     
     // TODO, 玩家触发某种状态的时候，调用此方法创建文本
-    public void OnCreatingStatusText(Vector3 playerPosition)
+    public void OnCreatingStatusText(Vector3 playerPosition, string textContent)
     {
-        
+        var fixedPlayerPosition = new Vector3(playerPosition.x, playerPosition.y + playerPosFixedDelta,
+            playerPosition.z);
+        var textObject = Instantiate(tmpTextPrefab, _camera.WorldToScreenPoint(fixedPlayerPosition), Quaternion.identity,
+            canvas.transform);
+
+        textObject.text = textContent;
     }
 }

@@ -49,7 +49,7 @@ public class GameManager : Singleton<GameManager>
         if (SceneManager.GetActiveScene().name!=remakeSceneName)
         {
             LoadSceneManager.Instance.LoadScene(remakeSceneName);
-             // yield return new WaitForSeconds(0.001f); //Wait期间会自动调用Update函数 这里直接写Instance.FindCatAndDog()是找不到猫狗的 
+                yield return new WaitForSeconds(0.001f); //Wait期间会自动调用Update函数 这里直接写Instance.FindCatAndDog()是找不到猫狗的 
                 cat.transform.position = remakePoint;
                 dog.transform.position = remakePoint;
         }
