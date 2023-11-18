@@ -210,9 +210,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void onMove(Vector2 input)
+    {
+        moveInput = input;
+        if (IsAlive)
+        {
+            IsMoving = moveInput != Vector2.zero;
+            SetFacingDirection(moveInput);
+        }
+        else
+        {
+            IsMoving = false;
+        }
+    }
+    
+
     public void onDash(InputAction.CallbackContext context)
     {
         if (context.started && canDash)
+        {
+            StartCoroutine(Dash());
+            animator.SetTrigger(AnimationStrings.dash);
+        }
+    }
+
+    public void onDash()
+    {
+        if (canDash)
         {
             StartCoroutine(Dash());
             animator.SetTrigger(AnimationStrings.dash);
@@ -254,6 +278,15 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
+    
+    public void onJump()
+    {
+        if (touchingDirections.IsGrounded)
+        {
+            animator.SetTrigger(AnimationStrings.jumpTrigger);
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+        }
+    }
 
     // 处理攻击输入的方法
     public void onAttack(InputAction.CallbackContext context)
@@ -264,6 +297,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void onAttack()
+    {
+        animator.SetTrigger(AnimationStrings.attackTrigger);
+    }
+
     // 处理远程攻击输入的方法
     public void onRangedAttack(InputAction.CallbackContext context)
     {
@@ -271,6 +309,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
         }
+    }
+
+    public void onRangedAttack()
+    {
+        animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
     }
 
     // 处理被攻击的方法

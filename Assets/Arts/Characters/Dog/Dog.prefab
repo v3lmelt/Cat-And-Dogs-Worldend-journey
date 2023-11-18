@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 4890382340028598302}
   - component: {fileID: 6456632841659389049}
   - component: {fileID: 7074668962519961823}
+  - component: {fileID: 314126155989683050}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Player
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8860777969687601505}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -504,6 +505,34 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 77294005-fc56-4472-9d41-78a53615c525
     m_ActionName: Player/RangedAttack[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7e794a54-8e1d-47d9-8fca-9571dd461f2a
+    m_ActionName: Player1/Move[/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 25623afc-ce38-48de-9ddc-15dc2203d3da
+    m_ActionName: Player1/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba785fa1-fddc-4225-ab81-30d050ffe970
+    m_ActionName: Player1/Run[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e9ebbe73-7de1-4f1f-a54f-9f2a705b9bcc
+    m_ActionName: Player1/Jump[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cfafb1b7-974a-4336-884d-fe841e14f60c
+    m_ActionName: Player1/Attack[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 09191b5d-f4f8-4137-9560-3a3ba5b24761
+    m_ActionName: Player1/Dash[/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 41846c8e-57f3-4fb7-a0bb-a240c02f3193
+    m_ActionName: Player1/RangedAttack[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -786,3 +815,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 0}
   projectilePrefab: {fileID: 5897187740819283956, guid: 49e72d1919201eb41a7a5a48dbef0172, type: 3}
+--- !u!114 &314126155989683050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860777969687601505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e1c48f525efc04795cadea7fcfe1eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 106
+  moveLeft: 97
+  moveRight: 100
+  rangedAttack: 0
+  jump: 119
+  inputVector: {x: 0, y: 0}
+  hasDash: 1
+  dashKey: 99
