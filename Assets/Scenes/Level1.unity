@@ -1187,7 +1187,7 @@ Transform:
   m_GameObject: {fileID: 1018128711}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000013035611, y: -0.00000006749077, z: 4.3758525e-11, w: 1}
-  m_LocalPosition: {x: -91.86226, y: -7.3873296, z: -1.0706958}
+  m_LocalPosition: {x: -91.865814, y: -7.38732, z: -1.0706958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1403,6 +1403,10 @@ PrefabInstance:
     - target: {fileID: 2478304677924622159, guid: c5bff4d18f136924f9d488884944e650, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -61.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726621259634666284, guid: c5bff4d18f136924f9d488884944e650, type: 3}
+      propertyPath: m_Name
+      value: CoinNum
       objectReference: {fileID: 0}
     - target: {fileID: 2956507172791672650, guid: c5bff4d18f136924f9d488884944e650, type: 3}
       propertyPath: m_AnchorMax.y

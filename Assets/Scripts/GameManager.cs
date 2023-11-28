@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class GameManager : Singleton<GameManager>
     
     public GameObject cat;
     public GameObject dog;
+    public GameObject Canvas_1;//血条金钱ui
+    public int CoinNum;
     private void Start()
     {
         DontDestroyOnLoad(this);
@@ -32,6 +35,8 @@ public class GameManager : Singleton<GameManager>
     {
         cat = GameObject.Find("Cat");
         dog = GameObject.Find("Dog");
+        Canvas_1 = GameObject.Find("Canvas_1");
+
     }
     public void Dead()
     {
@@ -64,5 +69,10 @@ public class GameManager : Singleton<GameManager>
             dog.transform.position = remakePoint;
         }
         yield break;
+    }
+    public void GetMoney(int num)
+    {
+        Canvas_1.transform.Find("Coin").transform.Find("CoinNum").GetComponent<TextMeshProUGUI>().text = (CoinNum+=num).ToString();
+
     }
 }
