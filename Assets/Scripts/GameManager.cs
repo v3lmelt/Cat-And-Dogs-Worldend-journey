@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject cat;
     public GameObject dog;
     public GameObject Canvas_1;//血条金钱ui
+    public GameObject CoinPrefab;
     public int CoinNum;
     private void Start()
     {
