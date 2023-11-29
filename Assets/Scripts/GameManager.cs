@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
     
     public string remakeSceneName;
     public Vector3 remakePoint;
+
     
     public GameObject cat;
     public GameObject dog;
@@ -28,7 +29,8 @@ public class GameManager : Singleton<GameManager>
     // 
     private void OnSceneChanged(Scene scene, LoadSceneMode loadSceneMode)
     {
-        FindCatAndDog();  
+        FindCatAndDog();
+        GetMoney(0);
     }
     
     public void FindCatAndDog()
@@ -72,6 +74,10 @@ public class GameManager : Singleton<GameManager>
     }
     public void GetMoney(int num)
     {
+        if(Canvas_1 ==null)
+        {
+            return;
+        }
         Canvas_1.transform.Find("Coin").transform.Find("CoinNum").GetComponent<TextMeshProUGUI>().text = (CoinNum+=num).ToString();
 
     }

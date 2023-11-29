@@ -430,7 +430,7 @@ PrefabInstance:
     - target: {fileID: 6887331798841590270, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: arrow
       value: 
-      objectReference: {fileID: 238529985}
+      objectReference: {fileID: 238529986}
     - target: {fileID: 6887331798841590270, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: Distnation
       value: Level1.1
@@ -544,6 +544,11 @@ PrefabInstance:
 --- !u!1 &238529985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8677357896610293821, guid: c3d4c372b0d946e43b7fe020ca279068, type: 3}
+  m_PrefabInstance: {fileID: 238529984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &238529986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6978159938567186571, guid: c3d4c372b0d946e43b7fe020ca279068, type: 3}
   m_PrefabInstance: {fileID: 238529984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &438185665
