@@ -46,7 +46,7 @@ public class TreasureBox : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 只能是玩家捡到宝箱
-        if (!Util.ComparePlayerTag(other.gameObject) || _hasOpened) return;
+        if (!TagUtil.ComparePlayerTag(other.gameObject) || _hasOpened) return;
         // 捡到宝箱后触发动画
         _animator.SetTrigger(ChestAnimationStrings.openTrigger);
         _hasOpened = true;

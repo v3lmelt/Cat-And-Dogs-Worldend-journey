@@ -13,7 +13,7 @@ public class SpeedPotion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Speed Potion!");
         other.GetComponent<PotionHandler>().OnApplySpeedBuff();
     }

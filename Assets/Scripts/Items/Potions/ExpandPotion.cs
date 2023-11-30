@@ -10,15 +10,9 @@ public class ExpandPotion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
-        var damageable = other.GetComponent<Damageable>();
-        if (damageable == null)
-        {
-            Debug.LogError("Hey damageable can't be found! wtf");
-            return;
-        }
-        damageable.MaxHealth += maxHpIncreaseAmount;
-        damageable.Health += maxHpIncreaseAmount;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
+        
+        PlayerStatUtil.IncreasePlayerHp(maxHpIncreaseAmount);
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Max Health + " + maxHpIncreaseAmount 
             + "!");
         

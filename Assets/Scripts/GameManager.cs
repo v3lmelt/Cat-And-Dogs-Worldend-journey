@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,13 +20,27 @@ public class GameManager : Singleton<GameManager>
     private void OnEnable()
     {
         // 订阅事件, 在场景加载的时候尝试去找猫和狗部件
-        SceneManager.sceneLoaded += OnSceneChanged;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     // 
-    private void OnSceneChanged(Scene scene, LoadSceneMode loadSceneMode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        FindCatAndDog();  
+        Debug.Log("On Scene Loaded: " + scene.name);
+        if(PlayerStatUtil.SceneExcludeFromGettingComponents.Contains(scene.name)) return;
+        FindCatAndDog();
+        PlayerStatUtil.GetComponents();
+        if(PlayerStatUtil.SceneExcludeFromStatRestore.Contains(scene.name)) return;
+        PlayerStatUtil.RestorePlayerStats();
+    }
+
+    private static void OnSceneUnloaded(Scene current)
+    {
+        Debug.Log("On Scene unloaded: " + current.name);
+        
+        if(current.name == null || PlayerStatUtil.SceneExcludeFromStatRecord.Contains(current.name)) return;
+        PlayerStatUtil.RecordPlayerStats();
     }
     
     public void FindCatAndDog()

@@ -36,7 +36,7 @@ public class TriggerDialog : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
         
         if (showHint)
         {
@@ -51,7 +51,7 @@ public class TriggerDialog : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
         if (showHint)
         {
             // 判断是否有提示示例

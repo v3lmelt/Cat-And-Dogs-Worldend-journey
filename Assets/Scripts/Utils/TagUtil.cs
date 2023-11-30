@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public static class Util
+public static class TagUtil
     {
         public static bool ComparePlayerTag(GameObject go)
         {

@@ -9,15 +9,8 @@ public class AttackPotion : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 只有玩家才能发生碰撞
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
-        var attack = other.gameObject.GetComponentInChildren<Attack>();
-        if (attack == null)
-        {
-            Debug.LogError("Attack component can't be found in children!");
-            return;
-        }
-        // 
-        attack.attackDamage += damageIncreaseAmount;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
+        PlayerStatUtil.IncreaseAttackDamage(damageIncreaseAmount);
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Damage + " + damageIncreaseAmount
         + "!");
         
