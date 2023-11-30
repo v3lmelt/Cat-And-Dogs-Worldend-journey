@@ -39,7 +39,7 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
 
             if (timeElapsed > fadetime)
             {
-                if (!Util.ComparePlayerTag(objToRemove))
+                if (!TagUtil.ComparePlayerTag(objToRemove))
                 {
                    Instantiate(GameManager.Instance.CoinPrefab, objToRemove.transform.position, Quaternion.identity);
                     Destroy(objToRemove);
