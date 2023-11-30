@@ -23,7 +23,7 @@ public class SpikeTrap : MonoBehaviour
     private void OnCollisionStay2D(Collision2D other)
     {
         // 只有玩家能够与陷阱进行交互
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
         var damageable = other.gameObject.GetComponent<Damageable>();
         
         damageable.Hit(trapDamage, new Vector2(0, 5), DamageType.Melee);

@@ -12,7 +12,7 @@ public class HealthPotion : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 判断接触者是否是玩家
-        if (!Util.ComparePlayerTag(other.gameObject)) return;
+        if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
         
         var damageable = other.GetComponent<Damageable>();
         var healthRecoveryAmount = damageable.MaxHealth - damageable.Health;
