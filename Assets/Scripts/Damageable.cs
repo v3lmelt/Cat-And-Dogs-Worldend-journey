@@ -27,6 +27,7 @@ public class Damageable : MonoBehaviour
         set
         {
             _maxHealth = value;
+            healthChanged?.Invoke(_health, MaxHealth);
         }
     }
 
@@ -71,7 +72,11 @@ public class Damageable : MonoBehaviour
     public int MaxMP
     {
         get { return _maxMP; }
-        set { _maxMP = value; }
+        set
+        {
+            _maxMP = value; 
+            mpChanged?.Invoke(_mp, MaxMP);
+        }
     }
 
     //魔法消耗值
