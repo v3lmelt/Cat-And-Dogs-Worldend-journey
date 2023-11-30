@@ -3,7 +3,11 @@ guid: b6d33a580bfa4f34eb66e7fe71b5dcaa
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cat: {instanceID: 0}
+  - dog: {instanceID: 0}
+  - Canvas_1: {instanceID: 0}
+  - CoinPrefab: {fileID: 6366805265611638024, guid: 17c5fc0d7a0067746aa988da39a83c7c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

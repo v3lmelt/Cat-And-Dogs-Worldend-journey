@@ -647,6 +647,9 @@ MonoBehaviour:
   remakePoint: {x: 0, y: -3, z: 0}
   cat: {fileID: 0}
   dog: {fileID: 0}
+  Canvas_1: {fileID: 0}
+  CoinPrefab: {fileID: 6366805265611638024, guid: 17c5fc0d7a0067746aa988da39a83c7c, type: 3}
+  CoinNum: 0
 --- !u!4 &498745906
 Transform:
   m_ObjectHideFlags: 0

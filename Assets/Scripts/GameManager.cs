@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,9 +9,13 @@ public class GameManager : Singleton<GameManager>
     
     public string remakeSceneName;
     public Vector3 remakePoint;
+
     
     public GameObject cat;
     public GameObject dog;
+    public GameObject Canvas_1;//血条金钱ui
+    public GameObject CoinPrefab;
+    public int CoinNum;
     private void Start()
     {
         DontDestroyOnLoad(this);
@@ -27,6 +32,8 @@ public class GameManager : Singleton<GameManager>
     // 
     private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
+        FindCatAndDog();
+        GetMoney(0);
         Debug.Log("On Scene Loaded: " + scene.name);
         if(PlayerStatUtil.SceneExcludeFromGettingComponents.Contains(scene.name)) return;
         FindCatAndDog();
@@ -47,6 +54,8 @@ public class GameManager : Singleton<GameManager>
     {
         cat = GameObject.Find("Cat");
         dog = GameObject.Find("Dog");
+        Canvas_1 = GameObject.Find("Canvas_1");
+
     }
     public void Dead()
     {
@@ -79,5 +88,14 @@ public class GameManager : Singleton<GameManager>
             dog.transform.position = remakePoint;
         }
         yield break;
+    }
+    public void GetMoney(int num)
+    {
+        if(Canvas_1 ==null)
+        {
+            return;
+        }
+        Canvas_1.transform.Find("Coin").transform.Find("CoinNum").GetComponent<TextMeshProUGUI>().text = (CoinNum+=num).ToString();
+
     }
 }

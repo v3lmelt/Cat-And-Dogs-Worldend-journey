@@ -15,6 +15,7 @@ public class TpDoor : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!TagUtil.ComparePlayerTag(collision.gameObject)) return;
+        if (icon == null) return;
         icon.SetActive(false);
         _interactable = false;
     }

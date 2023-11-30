@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 public class Tp : MonoBehaviour
 {
     public string destination;
+    public Vector3 TpPoint;
     public bool catReady;
     public bool dogReady;
     public GameObject arrow; //有一只动物靠近时显示向右前进的箭头
@@ -40,7 +41,7 @@ public class Tp : MonoBehaviour
                 arrow.SetActive(false);
                 break;
             case true when dogReady:
-                LoadSceneManager.Instance.LoadScene(destination);
+                LoadSceneManager.Instance.LoadScene(destination,TpPoint);
                 break;
         }
     }

@@ -18,6 +18,8 @@ public class Coin : MonoBehaviour
     {
         // 只有玩家能拾取硬币
         if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
+        GameManager.Instance.GetMoney(1);
         Destroy(gameObject);
+        
     }
 }
