@@ -332,9 +332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def442d735859af4db069d1c44c148ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 7
+  walkSpeed: 8
   runSpeed: 10
-  airWalkSpeed: 3
+  airWalkSpeed: 6
   jumpImpulse: 10
   tr: {fileID: 8337474395277657749}
   _isMoving: 0

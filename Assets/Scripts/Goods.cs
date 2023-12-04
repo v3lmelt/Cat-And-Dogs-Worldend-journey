@@ -39,6 +39,11 @@ public class Goods : MonoBehaviour
             }
             Instantiate(goods, gameObject.transform.position, Quaternion.identity);
             GameManager.Instance.GetMoney(-int.Parse(price));
+            //加入不可再生物品列表
+            if (!LoadSceneManager.Instance.ObjectsToControl.Contains(this.gameObject.name))
+            {
+                LoadSceneManager.Instance.ObjectsToControl.Add(this.gameObject.name);
+            }
             gameObject.SetActive(false);
         }
     }
