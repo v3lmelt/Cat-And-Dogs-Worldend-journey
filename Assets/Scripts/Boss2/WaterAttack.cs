@@ -26,7 +26,7 @@ public class WaterAttack : MonoBehaviour
 
         dir = transform.localScale;
 
-        Speed = 5;
+        Speed = 8;
 
         Damge = 8;
 
