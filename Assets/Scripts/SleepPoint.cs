@@ -33,7 +33,12 @@ public class SleepPoint : MonoBehaviour
            GameManager.Instance.cat.GetComponent<Damageable>().MP = GameManager.Instance.cat.GetComponent<Damageable>().MaxMP;
            GameManager.Instance.dog.GetComponent<Damageable>().Health = GameManager.Instance.dog.GetComponent<Damageable>().MaxHealth;
            GameManager.Instance.dog.GetComponent<Damageable>().MP = GameManager.Instance.dog.GetComponent<Damageable>().MaxMP;
-           SleepStory.GetComponent<PlayableDirector>().Play();
+            if(PlayerPrefs.GetInt("SleepPoint")!=1)
+            {
+            SleepStory.GetComponent<PlayableDirector>().Play();
+            }
+           
+           PlayerPrefs.SetInt("SleepPoint", 1);
 
         }
     }

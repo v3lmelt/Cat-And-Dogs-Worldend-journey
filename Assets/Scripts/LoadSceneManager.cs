@@ -66,7 +66,7 @@ public class LoadSceneManager:Singleton<LoadSceneManager>
                 Obj.SetActive(false);
                 Debug.Log("禁用了" + ObjName);
                 }
-            ActivateObject(Obj);
+            
             }
             
         }

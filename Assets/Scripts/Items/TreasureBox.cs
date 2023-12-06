@@ -59,6 +59,7 @@ public class TreasureBox : MonoBehaviour
         if (!LoadSceneManager.Instance.ObjectsToControl.Contains(this.gameObject.name))
         {
             LoadSceneManager.Instance.ObjectsToControl.Add(this.gameObject.name);
+            LoadSceneManager.Instance.ActivateObject(this.gameObject);
         }
         // 触发协程，延迟生成物品
 
