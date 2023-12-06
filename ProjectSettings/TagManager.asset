@@ -7,6 +7,11 @@ TagManager:
   - Trap
   - Item
   - Player_cat
+  - Ground
+  - AirWall
+  - Boss1
+  - Boss2
+  - Submarine
   layers:
   - Default
   - TransparentFX

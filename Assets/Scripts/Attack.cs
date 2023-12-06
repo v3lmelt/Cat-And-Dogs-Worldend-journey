@@ -51,5 +51,14 @@ public class Attack : MonoBehaviour
             Vector2 deliveredKnockback = new Vector2(0,0);
             obstacleDamage.Hit(attackDamage, deliveredKnockback, DamageType.Melee);
         }
+
+        if (collision.gameObject.CompareTag("Boss1"))
+        {
+            collision.GetComponent<Villain>().BeHit(attackDamage);
+        }
+        if (collision.gameObject.CompareTag("Boss2"))
+        {
+            collision.GetComponent<Tentacle>().BeHit(attackDamage);
+        }
     }
 }

@@ -36,5 +36,15 @@ public class Projectile : MonoBehaviour
                 Debug.Log(collision.name + " hit for " + damage);
                 Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Boss1"))
+        {
+            collision.GetComponent<Villain>().BeHit(damage);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Boss2"))
+        {
+            collision.GetComponent<Tentacle>().BeHit(damage);
+            Destroy(gameObject);
+        }
     }
 }
