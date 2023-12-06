@@ -36,11 +36,16 @@ public class TreasureBox : MonoBehaviour
     {
         GetComponent<Collider2D>();
         _animator = GetComponent<Animator>();
+        
+       
     }
 
     private void Start()
     {
         if(isMonsterBox) _animator.SetTrigger(ChestAnimationStrings.monsterTrigger);
+
+         
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -50,7 +55,14 @@ public class TreasureBox : MonoBehaviour
         // 捡到宝箱后触发动画
         _animator.SetTrigger(ChestAnimationStrings.openTrigger);
         _hasOpened = true;
+        //加入不可再生物品列表
+        if (!LoadSceneManager.Instance.ObjectsToControl.Contains(this.gameObject.name))
+        {
+            LoadSceneManager.Instance.ObjectsToControl.Add(this.gameObject.name);
+            LoadSceneManager.Instance.ActivateObject(this.gameObject);
+        }
         // 触发协程，延迟生成物品
+
         StartCoroutine(SpawnItemCoroutine());
     }
 

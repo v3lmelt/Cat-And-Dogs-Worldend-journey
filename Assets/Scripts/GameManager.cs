@@ -34,6 +34,8 @@ public class GameManager : Singleton<GameManager>
     {
         FindCatAndDog();
         GetMoney(0);
+        LoadSceneManager.Instance.CheckObjectPlayerPrefs();
+
         Debug.Log("On Scene Loaded: " + scene.name);
         if(PlayerStatUtil.SceneExcludeFromGettingComponents.Contains(scene.name)) return;
         FindCatAndDog();
