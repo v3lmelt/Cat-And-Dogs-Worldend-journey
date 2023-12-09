@@ -7,9 +7,9 @@ public static class PlayerStatUtil
     private static Damageable[] _playerDamageables = new Damageable[2];
     
     public static readonly string[] SceneExcludeFromGettingComponents = new string[]{"StartMenu", "Background Story",};
-    public static readonly string[] SceneExcludeFromStatRestore = new string[]{"StartMenu", "Background Story", "GameplayScene", 
+    public static readonly string[] SceneExcludeFromStatRestore = new string[]{"StartMenu", "Background Story", "GameplayScene",
         "Level1"};
-    public static readonly string[] SceneExcludeFromStatRecord = new string[]{"StartMenu", "Background Story", "GameplayScene"};
+    public static readonly string[] SceneExcludeFromStatRecord = new string[]{"StartMenu", "Background Story", "GameplayScene" };
     private struct CatStats
     {
         public static int CurrentHealth;
@@ -53,9 +53,17 @@ public static class PlayerStatUtil
             foreach (var d in _playerAttacks)
             {
                 d.attackDamage += increaseAmount;
+                GameManager.Instance.dog.gameObject.GetComponent<ProjectileLauncher>().MagicDamage += increaseAmount;
             }
         }
-        
+        public static void IncreaseRestoreMp(int increaseAmount)
+         {
+            foreach(var d in _playerAttacks)
+            {
+            d.restoreMp += increaseAmount;
+        }
+    }
+            
         // 获取最新的操纵对象! 否则有可能找不到对应的对象.
         public static void GetComponents()
         {

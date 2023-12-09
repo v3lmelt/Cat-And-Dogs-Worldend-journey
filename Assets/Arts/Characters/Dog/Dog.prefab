@@ -815,6 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 0}
   projectilePrefab: {fileID: 5897187740819283956, guid: 49e72d1919201eb41a7a5a48dbef0172, type: 3}
+  MagicDamage: 100
 --- !u!114 &314126155989683050
 MonoBehaviour:
   m_ObjectHideFlags: 0

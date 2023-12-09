@@ -6,12 +6,13 @@ public class ProjectileLauncher : MonoBehaviour
 {
     public Transform launchPoint;
     public GameObject projectilePrefab;
-
+    public int MagicDamage;
     private Damageable launcherDamageable;
 
     private void Start()
     {
         launcherDamageable = GetComponent<Damageable>();
+        projectilePrefab.GetComponent<Projectile>().damage = MagicDamage;
     }
 
     public void FireProjectile()
