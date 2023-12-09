@@ -5335,7 +5335,7 @@ Transform:
   m_GameObject: {fileID: 1035729322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -98.96334, y: -6.95848, z: -10}
+  m_LocalPosition: {x: -100.502, y: -6.96016, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13858,6 +13858,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2718677091606507550, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
   m_PrefabInstance: {fileID: 1884883502}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1884883504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4487147116907318502, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
+  m_PrefabInstance: {fileID: 1884883502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1961261774
 GameObject:
   m_ObjectHideFlags: 0
@@ -14179,6 +14184,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7074668962519961823, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
+      propertyPath: launchPoint
+      value: 
+      objectReference: {fileID: 1884883504}
     - target: {fileID: 8860777969687601505, guid: 1c702007271e9ea438a258f013b2ccd2, type: 3}
       propertyPath: m_Name
       value: Dog
