@@ -775,10 +775,10 @@ MonoBehaviour:
   mpChanged:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 100
-  _health: 100
-  _mp: 100
-  _maxMP: 100
+  _maxHealth: 150
+  _health: 150
+  _mp: 60
+  _maxMP: 60
   MagicCost: 20
   _hasMp: 1
   _isAlive: 1
