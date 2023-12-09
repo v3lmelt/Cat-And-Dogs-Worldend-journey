@@ -21,8 +21,8 @@ public class Villain : MonoBehaviour
     Animator C_ani;
     //public AudioSource HitAudio;
     public GameObject FireBullet;
-    public GameObject Player;//获取到玩家的位置
-    public GameObject Player2;//获取到玩家的位置
+    public GameObject Player;//鑾峰彇鍒扮帺瀹剁殑浣嶇疆
+    public GameObject Player2;//鑾峰彇鍒扮帺瀹剁殑浣嶇疆
 
     Vector2 Initial;
 
@@ -56,7 +56,7 @@ public class Villain : MonoBehaviour
 
         state = BossState.Idle;
 
-        MaxHp = 200;
+        MaxHp = 2000;
         Hp = MaxHp;
 
         MoveDamge = 20;
@@ -153,7 +153,7 @@ public class Villain : MonoBehaviour
             state = BossState.Death;
         }
     }
-    public void Dash()//冲撞 
+    public void Dash()//鍐叉挒 
     {
         if (C_tra.localScale.x == Initial.x)
         {

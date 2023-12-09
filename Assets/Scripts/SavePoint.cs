@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SavePoint : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Vector3 remakePoint;
     void Start()
     {
-        GameManager.Instance.remakePoint = new Vector3(0, 3, 0);
+        GameManager.Instance.remakePoint = remakePoint;
         GameManager.Instance.remakeSceneName = SceneManager.GetActiveScene().name;
         
         
