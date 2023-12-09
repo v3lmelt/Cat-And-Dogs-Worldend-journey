@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4629276219264478272}
   - component: {fileID: 4712200242642757288}
   m_Layer: 13
-  m_Name: ExpandPotion
+  m_Name: Expand Potion
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

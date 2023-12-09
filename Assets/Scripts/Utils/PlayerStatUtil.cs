@@ -31,7 +31,8 @@ public static class PlayerStatUtil
         public static int MaxMp;
 
         public static int AttackDamage;
-        public static int MagicDamage;  
+        public static int MagicDamage;
+        public static int RestoreMp;
     }
     
         public static void IncreasePlayerHp(int increaseAmount)
@@ -63,8 +64,8 @@ public static class PlayerStatUtil
             foreach(var d in _playerAttacks)
             {
             d.restoreMp += increaseAmount;
+              }
         }
-    }
             
         // 获取最新的操纵对象! 否则有可能找不到对应的对象.
         public static void GetComponents()
@@ -93,6 +94,7 @@ public static class PlayerStatUtil
              DogStats.MaxMp = _playerDamageables[1].MaxMP;
              DogStats.AttackDamage = _playerAttacks[1].attackDamage;
              DogStats.MagicDamage = _dogMagicPower.MagicDamage;
+             DogStats.RestoreMp = _playerAttacks[1].restoreMp;
         }
 
         public static void RestorePlayerStats()
@@ -108,6 +110,7 @@ public static class PlayerStatUtil
             _playerDamageables[1].MP = DogStats.CurrentMp;
             _playerDamageables[1].MaxMP = DogStats.MaxMp;
             _playerAttacks[1].attackDamage = DogStats.AttackDamage;
-             _dogMagicPower.MagicDamage = DogStats.MagicDamage;
+            _dogMagicPower.MagicDamage = DogStats.MagicDamage;
+        _playerAttacks[1].restoreMp = DogStats.RestoreMp;
     }
     }
