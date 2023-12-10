@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using Enums;
 
 public class UIManager : MonoBehaviour
@@ -13,10 +10,7 @@ public class UIManager : MonoBehaviour
 
     public Canvas gameCanvas;
 
-    private void Awake()
-    {
-        //gameCanvas = FindObjectOfType<Canvas>();
-    }
+    public Vector3 damageTextSpawnDelta = new Vector3(1.5f, 0, 0);
 
     private void OnEnable()
     {
@@ -32,9 +26,10 @@ public class UIManager : MonoBehaviour
 
     public void CharacterTookDamage(GameObject character, int damageReceived, DamageType damageType)
     {
-        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
+        if (Camera.main == null) return;
+        var spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position + damageTextSpawnDelta);
 
-        TMP_Text tmpText = Instantiate(damageTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform)
+        var tmpText = Instantiate(damageTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform)
             .GetComponent<TMP_Text>();
 
         tmpText.text = damageReceived.ToString();
@@ -50,21 +45,20 @@ public class UIManager : MonoBehaviour
             case DamageType.Ranged:
                 heathText.SetStartColor(Color.blue);
                 break;
-                // �����˺����͵Ĵ���
+            // �����˺����͵Ĵ���
+            default:
+                throw new ArgumentOutOfRangeException(nameof(damageType), damageType, null);
         }
     }
 
     public void CharacterHealed(GameObject character, int healthRestored)
     {
+        if (Camera.main == null) return;
         Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
 
         TMP_Text tmpText = Instantiate(healthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform)
             .GetComponent<TMP_Text>();
 
         tmpText.text = healthRestored.ToString();
-    }
-    public void onExitGame(InputAction.CallbackContext context)
-    {
-
     }
 }

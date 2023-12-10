@@ -1,4 +1,5 @@
 using System;
+using Enums;
 using UnityEngine;
 
 namespace Boss1
@@ -85,12 +86,12 @@ namespace Boss1
                 }
                 case BossState.Idle:
                 {
-                    IdleProccess();
+                    IdleProcess();
                     break;
                 }
                 case BossState.BeHit:
                 {
-                    BeHitProccess();
+                    BeHitProcess();
                     break;
                 }
                 case BossState.Death:
@@ -162,7 +163,7 @@ namespace Boss1
                 _cRig.velocity = new Vector2(speed, _cRig.velocity.y);
             }
         }
-        public void IdleProccess()
+        public void IdleProcess()
         {
             _cAni.Play("Idle");
             idleTime -= Time.deltaTime;
@@ -187,7 +188,7 @@ namespace Boss1
                 _state = BossState.Death;
             }
         }
-        public void BeHitProccess()
+        public void BeHitProcess()
         {
             _cAni.Play("BeHit");
             idleTime -= Time.deltaTime;
@@ -199,6 +200,8 @@ namespace Boss1
             {
                 _state = BossState.Death;
             }
+            
+            
         }
         public void BeHit(float damage)
         {
@@ -206,6 +209,7 @@ namespace Boss1
             isHit = true;
             
             _healthBar.ChangeHealth(-damage);
+            CharacterEvents.TriggerCharacterDamaged(gameObject, (int)damage, DamageType.Melee);
         }
         public void BeHitOver()
         {

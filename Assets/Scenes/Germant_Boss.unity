@@ -1051,6 +1051,14 @@ PrefabInstance:
       propertyPath: gameCanvas
       value: 
       objectReference: {fileID: 4606985}
+    - target: {fileID: 8726709702517395256, guid: ed3b2117ae7513949b06f33cd21df288, type: 3}
+      propertyPath: damageTextSpawnDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726709702517395256, guid: ed3b2117ae7513949b06f33cd21df288, type: 3}
+      propertyPath: damageTextSpawnDelta.y
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2353,6 +2361,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -220
       objectReference: {fileID: 0}
+    - target: {fileID: 6941235857355140039, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
+      propertyPath: buffTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8181431684607087825, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
       propertyPath: m_Name
       value: HealthBarCanvas
@@ -2490,6 +2502,10 @@ PrefabInstance:
       propertyPath: MoveDamge
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
+      propertyPath: fireBullet
+      value: 
+      objectReference: {fileID: 5592074720981324538, guid: 4b2490654d51bf748ad0d7f1d54a55f9, type: 3}
     - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
       propertyPath: moveDamage
       value: 15
