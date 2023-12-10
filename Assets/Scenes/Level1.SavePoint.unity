@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 107881723}
   - component: {fileID: 107881725}
   m_Layer: 6
-  m_Name: Ground
+  m_Name: GroundCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4262,7 +4262,7 @@ Transform:
   m_GameObject: {fileID: 578404363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.014648, y: 1.34935, z: -10}
+  m_LocalPosition: {x: -14.921099, y: 1.34854, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5191,7 +5191,7 @@ GameObject:
   - component: {fileID: 899017479}
   - component: {fileID: 899017480}
   m_Layer: 6
-  m_Name: GroundCollider (1)
+  m_Name: LevelBorderRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5464,7 +5464,7 @@ GameObject:
   - component: {fileID: 1012280587}
   - component: {fileID: 1012280588}
   m_Layer: 6
-  m_Name: GroundCollider
+  m_Name: LevelBorderLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5976,7 +5976,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 533296224139483674, guid: 8f681709bdb588f449396e852eeb6c26, type: 3}
       propertyPath: m_Name
-      value: Text Manager
+      value: TextManager
       objectReference: {fileID: 0}
     - target: {fileID: 1678576457426878492, guid: 8f681709bdb588f449396e852eeb6c26, type: 3}
       propertyPath: m_LocalPosition.x
