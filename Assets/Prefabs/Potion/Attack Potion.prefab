@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1735001273664451766}
   - component: {fileID: -1029461315858950504}
   m_Layer: 13
-  m_Name: AttackPotion
+  m_Name: Attack Potion
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98b3d70e7c05f2488102b36b7a4f38e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageIncreaseAmount: 5
+  damageIncreaseAmount: 10
 --- !u!114 &1735001273664451766
 MonoBehaviour:
   m_ObjectHideFlags: 0

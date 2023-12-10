@@ -35,5 +35,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UnitTestScene.unity
     guid: 3ed3c6dfe2d5b674fb99ea45648cf238
+  - enabled: 1
+    path: Assets/Scenes/Japan.unity
+    guid: cdd0b36106072b649a1347efb6aa3ae0
+  - enabled: 1
+    path: Assets/Scenes/Japan_1.unity
+    guid: a53a05e44d4dd40468c9ea2137ccaeee
+  - enabled: 1
+    path: Assets/Scenes/Japan_2.unity
+    guid: c92aabebfe0ee5144bbf3e69347039ef
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4cc452b9547ca234593566a1c7d73344, type: 2}
