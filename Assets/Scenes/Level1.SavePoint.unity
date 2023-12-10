@@ -4262,7 +4262,7 @@ Transform:
   m_GameObject: {fileID: 578404363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.921099, y: 1.34854, z: -10}
+  m_LocalPosition: {x: -17.853914, y: 1.34964, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4821,6 +4821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goods (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037730665195841847, guid: 183b8df7f430e9a41b31a46f8a92e66d, type: 3}
+      propertyPath: goods
+      value: 
+      objectReference: {fileID: 5706585507117675623, guid: 0822bf646fe8f894db4f86de949a1fec, type: 3}
     - target: {fileID: 5828583369319341372, guid: 183b8df7f430e9a41b31a46f8a92e66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0750575
@@ -5552,6 +5556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goods (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037730665195841847, guid: 183b8df7f430e9a41b31a46f8a92e66d, type: 3}
+      propertyPath: goods
+      value: 
+      objectReference: {fileID: 5318272596442095553, guid: 644a48a851b477046960bb3d92628bdf, type: 3}
     - target: {fileID: 5828583369319341372, guid: 183b8df7f430e9a41b31a46f8a92e66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.368646
@@ -6540,6 +6548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goods (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2037730665195841847, guid: 183b8df7f430e9a41b31a46f8a92e66d, type: 3}
+      propertyPath: goods
+      value: 
+      objectReference: {fileID: 5706585507117675623, guid: 0822bf646fe8f894db4f86de949a1fec, type: 3}
     - target: {fileID: 5828583369319341372, guid: 183b8df7f430e9a41b31a46f8a92e66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.868084
@@ -7043,6 +7055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9763428618e443141807090daad58154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  remakePoint: {x: 0, y: 3, z: 0}
 --- !u!4 &1871652157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3151412129623190752, guid: 4c7668f32ddf4c843bc8d57bf6b43000, type: 3}

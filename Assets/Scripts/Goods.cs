@@ -13,6 +13,7 @@ public class Goods : MonoBehaviour
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = goods.GetComponent<SpriteRenderer>().sprite;
         gameObject.transform.Find("Canvas").Find("Price").GetComponent<TextMeshProUGUI>().text = price;
+        gameObject.transform.Find("Canvas").Find("Name").GetComponent<TextMeshProUGUI>().text = goods.gameObject.name;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
