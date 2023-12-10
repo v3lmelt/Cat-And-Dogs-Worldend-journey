@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Boss1;
 using UnityEngine;
 using Enums;
 public class Projectile : MonoBehaviour
