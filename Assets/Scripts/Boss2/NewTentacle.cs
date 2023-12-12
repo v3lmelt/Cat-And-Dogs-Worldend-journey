@@ -21,7 +21,7 @@ public class NewTentacle : Tentacle
     {
         for (var i = 0; i < Random.Range(foamGenerateMin, foamGenerateMax); i++)
         {
-            var foamRigid = Instantiate(FoamPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
+            var foamRigid = Instantiate(foamPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody2D>();
             
             foamRigid.AddForce(new Vector2(Random.Range(foamXForceMin, foamXForceMax) * transform.localScale.x, 
                 Random.Range(foamYForceMin, foamYForceMax)), ForceMode2D.Impulse);

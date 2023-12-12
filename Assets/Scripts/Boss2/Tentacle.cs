@@ -1,45 +1,66 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using Enums;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Tentacle : MonoBehaviour
 {
-    Transform C_tra;
-    Transform Mouse;
+    private Transform _cTra;
+    private Transform _mouse;
     public Transform player1Transform;
     public Transform player2Transform;
     public float speed = 5.0f;
-    public GameObject FoamPrefab;
-    public GameObject WaterPrefab;
+    [FormerlySerializedAs("FoamPrefab")] public GameObject foamPrefab;
+    [FormerlySerializedAs("WaterPrefab")] public GameObject waterPrefab;
 
-    private bool canMove = true;
-    public float MaxHp;
-    public float Hp;
-    public bool isDead = false;
-    private Animator animator;
+    private bool _canMove = true;
+    [FormerlySerializedAs("MaxHp")] public float maxHp;
+    [FormerlySerializedAs("Hp")] public float hp;
+    public bool isDead;
+    private Animator _animator;
 
-    Vector2 Initial;
+    private Vector2 _initial;
+    private Rigidbody2D _rigidbody2D;
+
+    private BossHealthBar _bossHealthBar;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
-        C_tra = GetComponent<Transform>();
-        Initial = C_tra.localScale;
-        Mouse = transform.Find("Mouse");
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _cTra = GetComponent<Transform>();
+        _initial = _cTra.localScale;
+        _mouse = transform.Find("Mouse");
+        _bossHealthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
+        
+        
+        // 进行Boss血条的初始化操作
+        if (_bossHealthBar == null)
+        {
+            Debug.Log("Can't find bossHealthBar, did you forget to place it?");
+        }
+        else
+        {
+            _bossHealthBar.maxHp = maxHp;
+            _bossHealthBar.currentHp = hp;
+        }
+        
     }
 
     private void Update()
     {
         CheckHp();
         // 计算怪物到两个玩家的距离
-        float distanceToPlayer1 = Vector2.Distance(transform.position, player1Transform.position);
-        float distanceToPlayer2 = Vector2.Distance(transform.position, player2Transform.position);
+        var position = transform.position;
+        var distanceToPlayer1 = Vector2.Distance(position, player1Transform.position);
+        var distanceToPlayer2 = Vector2.Distance(position, player2Transform.position);
 
         // 选择距离更短的玩家进行追逐
-        Transform targetPlayer = (distanceToPlayer1 < distanceToPlayer2) ? player1Transform : player2Transform;
+        var targetPlayer = (distanceToPlayer1 < distanceToPlayer2) ? player1Transform : player2Transform;
 
         // 在 Update 方法中实现怪物追逐玩家的逻辑
-        if (canMove)
+        if (_canMove)
         {
             ChasePlayer(targetPlayer);
         }
@@ -51,94 +72,111 @@ public class Tentacle : MonoBehaviour
         Vector2 direction = (targetPlayer.position - transform.position).normalized;
 
         // 设置怪物的速度
-        GetComponent<Rigidbody2D>().velocity = direction * speed;
+        _rigidbody2D.velocity = direction * speed;
 
-        // 通过修改怪物的朝向
-        if (direction.x < 0)
+        switch (direction.x)
         {
-            // 玩家在怪物的右侧，保持原始朝向
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
-        else if (direction.x > 0)
-        {
-            // 玩家在怪物的左侧，翻转朝向
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            // 通过修改怪物的朝向
+            case < 0:
+            {
+                var currentLocalScale = transform.localScale;
+                // 玩家在怪物的右侧，保持原始朝向
+                transform.localScale =
+                    new Vector3(Mathf.Abs(currentLocalScale.x), currentLocalScale.y, currentLocalScale.z);
+                break;
+            }
+            case > 0:
+                // 玩家在怪物的左侧，翻转朝向
+                var localScale = transform.localScale;
+                localScale = new Vector3(-Mathf.Abs(localScale.x), localScale.y, localScale.z);
+                transform.localScale = localScale;
+                break;
         }
     }
+
     public void CreateFoam()
     {
-        if (C_tra.localScale.x == Initial.x)
+        if (Math.Abs(_cTra.localScale.x - _initial.x) < 0.005f)
         {
-            for (int i = -5; i < 2; i++)
+            for (var i = -5; i < 2; i++)
             {
-                GameObject firebullet = Instantiate(FoamPrefab, null);
-                Vector3 dir = Quaternion.Euler(0, i * 15, 0) * -transform.right;
-                firebullet.transform.position = Mouse.position + dir * 1.0f;
+                var firebullet = Instantiate(foamPrefab, null);
+                var dir = Quaternion.Euler(0, i * 15, 0) * -transform.right;
+                firebullet.transform.position = _mouse.position + dir * 1.0f;
                 firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
-            for (int i = 0; i < 2; i++)
+
+            for (var i = 0; i < 2; i++)
             {
-                float randomAngle = Random.Range(-5f, 2f);
-                GameObject firebullet = Instantiate(FoamPrefab, null);
-                Vector3 dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
-                firebullet.transform.position = Mouse.position + dir * 1.0f;
+                var randomAngle = Random.Range(-5f, 2f);
+                var firebullet = Instantiate(foamPrefab, null);
+                var dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
+                firebullet.transform.position = _mouse.position + dir * 1.0f;
                 firebullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
             }
         }
-        else if (C_tra.localScale.x == -Initial.x)
+        else if (Math.Abs(_cTra.localScale.x - (-_initial.x)) < 0.005f)
         {
-            for (int i = -1; i < 5; i++)
+            for (var i = -1; i < 5; i++)
             {
-                GameObject firebullet = Instantiate(FoamPrefab, null);
-                Vector3 dir = Quaternion.Euler(0, i * 15, 0) * transform.right;
-                firebullet.transform.position = Mouse.position + dir * 1.0f;
+                var firebullet = Instantiate(foamPrefab, null);
+                var dir = Quaternion.Euler(0, i * 15, 0) * transform.right;
+                firebullet.transform.position = _mouse.position + dir * 1.0f;
                 firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
-            for (int i = 0; i < 2; i++)
+
+            for (var i = 0; i < 2; i++)
             {
-                float randomAngle = Random.Range(-5f, 2f);
-                GameObject firebullet = Instantiate(FoamPrefab, null);
-                Vector3 dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
-                firebullet.transform.position = Mouse.position + dir * 1.0f;
+                var randomAngle = Random.Range(-5f, 2f);
+                var firebullet = Instantiate(foamPrefab, null);
+                var dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
+                firebullet.transform.position = _mouse.position + dir * 1.0f;
                 firebullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
             }
         }
     }
+
     public void CreateWater()
     {
-        canMove = false;
+        _canMove = false;
         // 将 Boss 的速度置零
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        for (int i = 0; i < 5; i++)
+        for (var i = 0; i < 5; i++)
         {
-            int r = Random.Range(-13, 17);
-            GameObject foam = Instantiate(WaterPrefab, null);
+            var r = Random.Range(-13, 17);
+            var foam = Instantiate(waterPrefab, null);
             foam.transform.position = new Vector3(156, r, 0);
         }
     }
+
     public void CanMove()
     {
-        canMove=true;
+        _canMove = true;
     }
+
     public void Death()
     {
         Destroy(gameObject);
     }
+
     public void CheckHp()
     {
-        if (Hp <= 0)
+        switch (hp)
         {
-            isDead = true;
-            animator.Play("Death");
-        }
-        else if (Hp>0 &&Hp <= 30)
-        {
-            animator.Play("Attack_Water");
+            case <= 0:
+                isDead = true;
+                _animator.Play("Death");
+                break;
+            case > 0 and <= 30:
+                _animator.Play("Attack_Water");
+                break;
         }
     }
-    public void BeHit(float Damge)
+
+    public void BeHit(float damage)
     {
-        Hp -= Damge;
-        //isHit = true;
+        hp -= damage;
+        _bossHealthBar.ChangeHealth(-damage);
+        CharacterEvents.TriggerCharacterDamaged(gameObject, (int)damage, DamageType.Melee);
     }
 }

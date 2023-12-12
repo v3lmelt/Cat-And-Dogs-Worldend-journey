@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
         {
             return animator.GetBool(AnimationStrings.canMove);
         }
+        set => animator.SetBool(AnimationStrings.canMove, value);
     }
 
     // 对刚体2D的物理使用
