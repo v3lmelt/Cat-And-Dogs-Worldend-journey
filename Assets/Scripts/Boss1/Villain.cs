@@ -1,6 +1,8 @@
 using System;
+using Cainos.LucidEditor;
 using Enums;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Boss1
 {
@@ -22,27 +24,32 @@ namespace Boss1
         private Animator _cAni;
         //public AudioSource HitAudio;
         public GameObject fireBullet;
-        public GameObject player;//获取到玩家的位置
-        public GameObject player2;//获取到玩家的位置
-    
+
         private Vector2 _initial;
 
         private BossState _state;
-
+        
+        [Header("基本属性")]
         public float maxHp;
         public float hp;
-
-        public int moveDamage;
 
         public float speed;
 
         public float idleTime;
-        public float time;
 
         public int fireBulletAttackTime;
-
+        [Header("Boss状态")]
         public bool isHit;
         public bool isDead;
+        
+        [Header("怪物生成")]
+        [Tooltip("在Boss空闲时生成的怪物数量")]
+        public int enemySpawnMax = 8;
+        public int enemySpawnMin = 4;
+
+        public float spawnEnemyTimerElapsed = 0f;
+        [Tooltip("生成敌人的计时器")]
+        public float spawnEnemyTimer = 15f;
 
         private BossHealthBar _healthBar;
         private void Awake()
@@ -51,18 +58,23 @@ namespace Boss1
             _cRig = GetComponent<Rigidbody2D>();
             _cAni = GetComponent<Animator>();
             
-            player = GameObject.Find("Dog");
-            player2 = GameObject.Find("Cat");
+            GameObject.Find("Dog");
+            GameObject.Find("Cat");
             
             _muzzle = transform.Find("Muzzle");
 
             _initial = _cTra.localScale;
 
             _state = BossState.Idle;
-            _healthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
             
+            _healthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
             // boss血量初始化工作
-            if (_healthBar == null) return;
+            if (_healthBar == null)
+            {
+                Debug.LogError("Can't find healthbar");
+                return;
+            }
+            
             
             _healthBar.maxHp = maxHp;
             _healthBar.currentHp = hp;
@@ -167,6 +179,14 @@ namespace Boss1
         {
             _cAni.Play("Idle");
             idleTime -= Time.deltaTime;
+            spawnEnemyTimerElapsed += Time.deltaTime;
+            
+            if (spawnEnemyTimerElapsed >= spawnEnemyTimer)
+            {
+                StartCoroutine(BossEnemySpawner.Instance.SpawnEnemy(Random.Range(
+                    enemySpawnMin, enemySpawnMax)));
+                spawnEnemyTimerElapsed = 0f;
+            }
             if (hp <= maxHp / 2 && idleTime > 0)
             {
                 fireBulletAttackTime = 5;
