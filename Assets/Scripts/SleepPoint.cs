@@ -36,9 +36,13 @@ public class SleepPoint : MonoBehaviour
             if(PlayerPrefs.GetInt("SleepPoint")!=1)
             {
             SleepStory.GetComponent<PlayableDirector>().Play();
+            PlayerPrefs.SetInt("SleepPoint", 1);
             }
            
-           PlayerPrefs.SetInt("SleepPoint", 1);
+            
+            
+            
+          
 
         }
     }

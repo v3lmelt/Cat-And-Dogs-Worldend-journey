@@ -12,7 +12,7 @@ public class AttackPotion : MonoBehaviour
         if (!TagUtil.ComparePlayerTag(other.gameObject)) return;
         PlayerStatUtil.IncreaseAttackDamage(damageIncreaseAmount);
         TextManager.Instance.OnCreatingPotionText(other.transform.position, "Damage + " + damageIncreaseAmount
-        + "!");
+        + "MagicDamage" + damageIncreaseAmount*2 + "!");
         
         Destroy(gameObject);
     }

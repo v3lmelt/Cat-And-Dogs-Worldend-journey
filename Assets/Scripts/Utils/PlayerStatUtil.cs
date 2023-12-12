@@ -57,7 +57,7 @@ public static class PlayerStatUtil
             {
                 d.attackDamage += increaseAmount; 
             }
-            GameManager.Instance.dog.gameObject.GetComponent<ProjectileLauncher>().MagicDamage += increaseAmount;
+            GameManager.Instance.dog.gameObject.GetComponent<ProjectileLauncher>().MagicDamage += increaseAmount*5;
         }
         public static void IncreaseRestoreMp(int increaseAmount)
          {
