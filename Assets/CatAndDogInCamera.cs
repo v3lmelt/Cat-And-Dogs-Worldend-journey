@@ -1,62 +1,64 @@
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Serialization;
 
 public class CatAndDogInCamera : MonoBehaviour
 {
-    private Transform CatAndDog;
-    public Transform Cat;
-    public Transform Dog;
-    public Vector3 CatBeforeExit;
-    public Vector3 DogBeforeExit;
-    private Camera cm;
-    void Start()
+    private Transform _catAndDog;
+    [FormerlySerializedAs("Cat")] public Transform cat;
+    [FormerlySerializedAs("Dog")] public Transform dog;
+    [FormerlySerializedAs("CatBeforeExit")] public Vector3 catBeforeExit;
+    [FormerlySerializedAs("DogBeforeExit")] public Vector3 dogBeforeExit;
+    private Camera _cm;
+    private CinemachineVirtualCamera _cinemachineVirtualCamera;
+
+    private void Awake()
     {
-        Cat = GameObject.Find("Cat").transform;
-        Dog = GameObject.Find("Dog").transform; 
-        CatAndDog = new GameObject("CatAndDog").transform;
-        cm = Camera.main;
+        _cinemachineVirtualCamera = gameObject.GetComponent<CinemachineVirtualCamera>();
         gameObject.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = GameObject.Find("Level Border").GetComponent<PolygonCollider2D>();
     }
 
+    private void Start()
+    {
+        cat = GameObject.Find("Cat").transform;
+        dog = GameObject.Find("Dog").transform; 
+        _catAndDog = new GameObject("CatAndDog").transform;
+        _cm = Camera.main;
+    }
+
     
-    void Update()
+    private void Update()
 
     {
         // 如果猫狗不在相机中，让猫狗回到相机中
-        if (!IsVisableInCamera())
+        if (!IsVisibleInCamera())
         {
-            Cat.position = CatBeforeExit;
-            Dog.position = DogBeforeExit;
+            cat.position = catBeforeExit;
+            dog.position = dogBeforeExit;
         }
         // 摄像机看到猫狗后，将猫狗的位置赋值给CatAndDog，然后将CatAndDog作为摄像机的跟随目标
-        CatAndDog.position = (Cat.position + Dog.position) / 2;
-        CatAndDog.localScale = (Cat.localScale + Dog.localScale) / 2;
-        CatAndDog.rotation = new Quaternion(0,0,0,0);
-        gameObject.GetComponent<CinemachineVirtualCamera>().Follow = CatAndDog;
+        var catPos = cat.position;
+        var dogPos = dog.position;
+        
+        _catAndDog.position = (catPos + dogPos) / 2;
+        _catAndDog.localScale = (cat.localScale + dog.localScale) / 2;
+        _catAndDog.rotation = new Quaternion(0,0,0,0);
+        
+        _cinemachineVirtualCamera.Follow = _catAndDog;
         //储存猫狗出相机前的位置
-        CatBeforeExit = Cat.position;
-        DogBeforeExit = Dog.position;
+        catBeforeExit = catPos;
+        dogBeforeExit = dogPos;
     }
-    public bool IsVisableInCamera()
+    private bool IsVisibleInCamera()
     {
         
         //猫狗坐标
-        Vector3 cpos = Cat.position;
-        Vector3 dpos = Dog.position;
+        Vector3 cPos = cat.position;
+        Vector3 dPos = dog.position;
         //猫狗在相机中的坐标
-        Vector3 cviewPos = cm.WorldToViewportPoint(cpos);
-        Vector3 dviewPos = cm.WorldToViewportPoint(dpos);
+        Vector3 cViewPos = _cm.WorldToViewportPoint(cPos);
+        Vector3 dViewPos = _cm.WorldToViewportPoint(dPos);
         //x,y坐标都在0-1之间，说明在相机中
-        if (cviewPos.x > 0 && cviewPos.x < 1 && cviewPos.y > 0 && cviewPos.y < 1 && dviewPos.x > 0 && dviewPos.x < 1 && dviewPos.y > 0 && dviewPos.y < 1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return cViewPos.x is > 0 and < 1 && cViewPos.y is > 0 and < 1 && dViewPos.x is > 0 and < 1 && dViewPos.y is > 0 and < 1;
     }
 }
