@@ -1,29 +1,40 @@
 ﻿using System;
 using Enums;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Tentacle : MonoBehaviour
 {
+    public float speed = 5.0f;
+    public GameObject foamPrefab;
+    public GameObject waterPrefab;
+    
+    public float maxHp;
+    public float hp;
+    public bool isDead;
+
+    [Header("玩家追逐计时器")] 
+    public float chasePlayerTime = 2.5f;
+    [SerializeField]
+    private float chasePlayerTimeElapsed;
+
+    [Header("Boss静止计时器")] 
+    public float idleTime = 3.0f;
+    [SerializeField] 
+    private float idleTimeElapsed;
+    
     private Transform _cTra;
     private Transform _mouse;
-    public Transform player1Transform;
-    public Transform player2Transform;
-    public float speed = 5.0f;
-    [FormerlySerializedAs("FoamPrefab")] public GameObject foamPrefab;
-    [FormerlySerializedAs("WaterPrefab")] public GameObject waterPrefab;
 
-    private bool _canMove = true;
-    [FormerlySerializedAs("MaxHp")] public float maxHp;
-    [FormerlySerializedAs("Hp")] public float hp;
-    public bool isDead;
+    [SerializeField] 
+    private bool canMove;
     private Animator _animator;
 
     private Vector2 _initial;
     private Rigidbody2D _rigidbody2D;
 
     private BossHealthBar _bossHealthBar;
+    private Transform _submarineTransform;
 
     private void Awake()
     {
@@ -33,6 +44,7 @@ public class Tentacle : MonoBehaviour
         _initial = _cTra.localScale;
         _mouse = transform.Find("Mouse");
         _bossHealthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
+        _submarineTransform = GameObject.Find("submarine").transform;
         
         
         // 进行Boss血条的初始化操作
@@ -51,23 +63,33 @@ public class Tentacle : MonoBehaviour
     private void Update()
     {
         CheckHp();
-        // 计算怪物到两个玩家的距离
-        var position = transform.position;
-        var distanceToPlayer1 = Vector2.Distance(position, player1Transform.position);
-        var distanceToPlayer2 = Vector2.Distance(position, player2Transform.position);
-
-        // 选择距离更短的玩家进行追逐
-        var targetPlayer = (distanceToPlayer1 < distanceToPlayer2) ? player1Transform : player2Transform;
-
-        // 在 Update 方法中实现怪物追逐玩家的逻辑
-        if (_canMove)
+        // 对于水下关卡，此时玩家只有一个Submarine, 因此只考虑追逐Submarine
+        if (canMove && chasePlayerTimeElapsed < chasePlayerTime)
         {
-            ChasePlayer(targetPlayer);
+            ChasePlayer(_submarineTransform);
         }
+        // 追逐玩家完毕后转而静止
+        else if (idleTimeElapsed < idleTime)
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+            canMove = false;
+            idleTimeElapsed += Time.deltaTime;
+        }
+        // 静止时间计时器
+        else if (idleTimeElapsed >= idleTime)
+        {
+            idleTimeElapsed = 0;
+            chasePlayerTimeElapsed = 0;
+            canMove = true;
+        }
+        
+        
+        
     }
 
     private void ChasePlayer(Transform targetPlayer)
     {
+        chasePlayerTimeElapsed += Time.deltaTime;
         // 计算朝向目标玩家的方向
         Vector2 direction = (targetPlayer.position - transform.position).normalized;
 
@@ -100,45 +122,45 @@ public class Tentacle : MonoBehaviour
         {
             for (var i = -5; i < 2; i++)
             {
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, i * 15, 0) * -transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
 
             for (var i = 0; i < 2; i++)
             {
                 var randomAngle = Random.Range(-5f, 2f);
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
             }
         }
         else if (Math.Abs(_cTra.localScale.x - (-_initial.x)) < 0.005f)
         {
             for (var i = -1; i < 5; i++)
             {
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, i * 15, 0) * transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
 
             for (var i = 0; i < 2; i++)
             {
                 var randomAngle = Random.Range(-5f, 2f);
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
             }
         }
     }
 
     public void CreateWater()
     {
-        _canMove = false;
+        canMove = false;
         // 将 Boss 的速度置零
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         for (var i = 0; i < 5; i++)
@@ -151,7 +173,7 @@ public class Tentacle : MonoBehaviour
 
     public void CanMove()
     {
-        _canMove = true;
+        canMove = true;
     }
 
     public void Death()
@@ -159,7 +181,7 @@ public class Tentacle : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void CheckHp()
+    private void CheckHp()
     {
         switch (hp)
         {
