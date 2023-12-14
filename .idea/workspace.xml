@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0ab81639-9fb0-45a8-9707-a26576f76437" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/death.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/death.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/electricEel.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/electricEel.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/electricEel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/electricEel.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/electricEel.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/electricEel.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/swim.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/electricEel/swim.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab/Main Camera.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab/Main Camera.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab/Virtual Camera.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/CameraPrefab/Virtual Camera.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HealthBarSubmarine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/HealthBarSubmarine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/Tentacle/AC_Tentacle.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/Tentacle/AC_Tentacle.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/Tentacle/WaterAttack/WaterAttack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Enemies/Tentacle/WaterAttack/WaterAttack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arts/Characters/Submarine/Submarine.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arts/Characters/Submarine/Submarine.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UIs/HealthBarCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UIs/HealthBarCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UIs/StatusText.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UIs/StatusText.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FunctionTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FunctionTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GermantToJapen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GermantToJapen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Germant_BeforeBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Germant_BeforeBoss.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Germant_Boss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Germant_Boss.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Germany_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Germany_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Germany_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Germany_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Germany_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Germany_3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Japan_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Japan_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss1/FireBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss1/FireBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss2/FoamAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss2/FoamAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss2/Tentacle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss2/Tentacle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Boss2/WaterAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Boss2/WaterAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Potions/AttackPotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Potions/AttackPotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NewFolder1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Submarine/Missile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Submarine/Missile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/MSYHL SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/MSYHL SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/ipix_12px SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/ipix_12px SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2ZXGbgBkymA2eMDVvDASFOiLSav" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/10793/Desktop/PJ/komorebiiiiii/Cat-And-Dogs-Worldend-journey",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="0ab81639-9fb0-45a8-9707-a26576f76437" name="更改" comment="" />
+      <created>1702561084121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702561084121</updated>
+      <workItem from="1702561085169" duration="41000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

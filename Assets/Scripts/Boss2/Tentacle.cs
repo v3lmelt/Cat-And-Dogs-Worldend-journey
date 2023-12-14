@@ -1,29 +1,55 @@
 ﻿using System;
+using Cainos.LucidEditor;
 using Enums;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Tentacle : MonoBehaviour
 {
+    public float speed = 5.0f;
+    public GameObject foamPrefab;
+    public GameObject waterPrefab;
+
+    private const float MaxHp = 3750;
+    public float hp;
+    public bool isDead;
+
+    [Header("玩家追逐计时器")] 
+    public float chasePlayerTime = 2.5f;
+    [SerializeField]
+    private float chasePlayerTimeElapsed;
+
+    [Header("Boss静止计时器")] 
+    public float idleTime = 3.0f;
+    [SerializeField] 
+    private float idleTimeElapsed;
+    
     private Transform _cTra;
     private Transform _mouse;
-    public Transform player1Transform;
-    public Transform player2Transform;
-    public float speed = 5.0f;
-    [FormerlySerializedAs("FoamPrefab")] public GameObject foamPrefab;
-    [FormerlySerializedAs("WaterPrefab")] public GameObject waterPrefab;
 
-    private bool _canMove = true;
-    [FormerlySerializedAs("MaxHp")] public float maxHp;
-    [FormerlySerializedAs("Hp")] public float hp;
-    public bool isDead;
+    [SerializeField] 
+    private bool canMove;
     private Animator _animator;
 
     private Vector2 _initial;
     private Rigidbody2D _rigidbody2D;
 
     private BossHealthBar _bossHealthBar;
+    private Transform _submarineTransform;
+    
+    [Tooltip("激光射出的源点")]
+    public GameObject laserShotOrigin;
+    
+    [Tooltip("激光射出的Y范围")]
+    public float laserMinY;
+    public float laserMaxY;
+
+    [Tooltip("生成激光的数量")] 
+    public int laserCountMax = 9;
+    public int laserCountMin = 5; 
+    
+    [Header("触碰伤害")]
+    public int touchDamage = 5;
 
     private void Awake()
     {
@@ -32,7 +58,8 @@ public class Tentacle : MonoBehaviour
         _cTra = GetComponent<Transform>();
         _initial = _cTra.localScale;
         _mouse = transform.Find("Mouse");
-        _bossHealthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
+        _bossHealthBar = GameObject.Find("BossHealthBar").GetComponent<BossHealthBar>();
+        _submarineTransform = GameObject.Find("submarine").transform;
         
         
         // 进行Boss血条的初始化操作
@@ -42,7 +69,7 @@ public class Tentacle : MonoBehaviour
         }
         else
         {
-            _bossHealthBar.maxHp = maxHp;
+            _bossHealthBar.maxHp = MaxHp;
             _bossHealthBar.currentHp = hp;
         }
         
@@ -51,23 +78,33 @@ public class Tentacle : MonoBehaviour
     private void Update()
     {
         CheckHp();
-        // 计算怪物到两个玩家的距离
-        var position = transform.position;
-        var distanceToPlayer1 = Vector2.Distance(position, player1Transform.position);
-        var distanceToPlayer2 = Vector2.Distance(position, player2Transform.position);
-
-        // 选择距离更短的玩家进行追逐
-        var targetPlayer = (distanceToPlayer1 < distanceToPlayer2) ? player1Transform : player2Transform;
-
-        // 在 Update 方法中实现怪物追逐玩家的逻辑
-        if (_canMove)
+        // 对于水下关卡，此时玩家只有一个Submarine, 因此只考虑追逐Submarine
+        if (canMove && chasePlayerTimeElapsed < chasePlayerTime)
         {
-            ChasePlayer(targetPlayer);
+            ChasePlayer(_submarineTransform);
         }
+        // 追逐玩家完毕后转而静止
+        else if (idleTimeElapsed < idleTime)
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+            canMove = false;
+            idleTimeElapsed += Time.deltaTime;
+        }
+        // 静止时间计时器
+        else if (idleTimeElapsed >= idleTime)
+        {
+            idleTimeElapsed = 0;
+            chasePlayerTimeElapsed = 0;
+            canMove = true;
+        }
+        
+        
+        
     }
 
     private void ChasePlayer(Transform targetPlayer)
     {
+        chasePlayerTimeElapsed += Time.deltaTime;
         // 计算朝向目标玩家的方向
         Vector2 direction = (targetPlayer.position - transform.position).normalized;
 
@@ -100,58 +137,61 @@ public class Tentacle : MonoBehaviour
         {
             for (var i = -5; i < 2; i++)
             {
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, i * 15, 0) * -transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
 
             for (var i = 0; i < 2; i++)
             {
                 var randomAngle = Random.Range(-5f, 2f);
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
             }
         }
         else if (Math.Abs(_cTra.localScale.x - (-_initial.x)) < 0.005f)
         {
             for (var i = -1; i < 5; i++)
             {
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, i * 15, 0) * transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
 
             for (var i = 0; i < 2; i++)
             {
                 var randomAngle = Random.Range(-5f, 2f);
-                var firebullet = Instantiate(foamPrefab, null);
+                var fireBullet = Instantiate(foamPrefab, null);
                 var dir = Quaternion.Euler(0, randomAngle * 15, 0) * transform.right;
-                firebullet.transform.position = _mouse.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
+                fireBullet.transform.position = _mouse.position + dir * 1.0f;
+                fireBullet.transform.rotation = Quaternion.Euler(0, 0, randomAngle * 15);
             }
         }
     }
 
     public void CreateWater()
     {
-        _canMove = false;
+        canMove = false;
         // 将 Boss 的速度置零
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        for (var i = 0; i < 5; i++)
+        for (var i = 0; i < Random.Range(laserCountMin, laserCountMax); i++)
         {
-            var r = Random.Range(-13, 17);
-            var foam = Instantiate(waterPrefab, null);
-            foam.transform.position = new Vector3(156, r, 0);
+            // 使用激光射出的Y范围
+            var randomY = Random.Range(laserMinY, laserMaxY);
+            var laserPos = new Vector3(laserShotOrigin.transform.position.x, randomY,
+                0);
+            var foam = Instantiate(waterPrefab, laserPos,
+                Quaternion.identity);
         }
     }
 
     public void CanMove()
     {
-        _canMove = true;
+        canMove = true;
     }
 
     public void Death()
@@ -159,7 +199,7 @@ public class Tentacle : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void CheckHp()
+    private void CheckHp()
     {
         switch (hp)
         {
@@ -167,7 +207,7 @@ public class Tentacle : MonoBehaviour
                 isDead = true;
                 _animator.Play("Death");
                 break;
-            case > 0 and <= 30:
+            case > 0 and <= MaxHp * 0.8f:
                 _animator.Play("Attack_Water");
                 break;
         }
@@ -178,5 +218,14 @@ public class Tentacle : MonoBehaviour
         hp -= damage;
         _bossHealthBar.ChangeHealth(-damage);
         CharacterEvents.TriggerCharacterDamaged(gameObject, (int)damage, DamageType.Melee);
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            var damageable = other.GetComponent<Damageable>();
+            damageable.Hit(touchDamage, Vector2.zero, DamageType.Melee);
+        }
     }
 }
