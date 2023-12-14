@@ -403,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 6887331798841590270, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: arrow
       value: 
-      objectReference: {fileID: 238529985}
+      objectReference: {fileID: 238529986}
     - target: {fileID: 6887331798841590270, guid: ee439a9a75dbe0b40a3ee9a864645f44, type: 3}
       propertyPath: Distnation
       value: Level1.1
@@ -509,10 +509,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
-    - target: {fileID: 6978159938567186571, guid: c3d4c372b0d946e43b7fe020ca279068, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -521,6 +517,11 @@ PrefabInstance:
 --- !u!1 &238529985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8677357896610293821, guid: c3d4c372b0d946e43b7fe020ca279068, type: 3}
+  m_PrefabInstance: {fileID: 238529984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &238529986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6978159938567186571, guid: c3d4c372b0d946e43b7fe020ca279068, type: 3}
   m_PrefabInstance: {fileID: 238529984}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &438185665
@@ -1340,11 +1341,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6936923420273611711, guid: 80d63a6588e733f458036eef5e212ee9, type: 3}
   m_PrefabInstance: {fileID: 1685767248}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 --- !u!1001 &1408245473
 =======
 --- !u!1001 &1378806529
 >>>>>>> main
+=======
+--- !u!1001 &1378806529
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1352,47 +1357,52 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     - target: {fileID: 3478152731896975104, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+=======
+    - target: {fileID: 5061026517783690855, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.86301
+      value: -91.86498
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.y
       value: -7.3873296
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.0706958
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000000013035611
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.00000006749077
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 4.3758525e-11
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.04
       objectReference: {fileID: 0}
-    - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
 =======
     - target: {fileID: 5061026517783690855, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
@@ -1437,6 +1447,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
 >>>>>>> main
+=======
+    - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -1444,11 +1457,15 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
 =======
   m_SourcePrefab: {fileID: 100100000, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
 >>>>>>> main
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+>>>>>>> Stashed changes
 --- !u!1001 &1530733666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3395,11 +3412,15 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   - {fileID: 1408245473}
 =======
   - {fileID: 1378806529}
 >>>>>>> main
+=======
+  - {fileID: 1378806529}
+>>>>>>> Stashed changes
   - {fileID: 6581704861181101210}
   - {fileID: 438185667}
   - {fileID: 144875330}
