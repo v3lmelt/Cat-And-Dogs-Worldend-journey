@@ -1,9 +1,5 @@
 using Enums;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.UIElements;
 
 public class FoamAttack : MonoBehaviour
 {
@@ -55,13 +51,15 @@ public class FoamAttack : MonoBehaviour
     {
         if (Boss.transform.localScale.x > 0)
         {
-            transform.localScale = new Vector3(dir.x, dir.y, dir.z);
-            transform.position += Speed * -transform.right * Time.deltaTime;
+            var transform1 = transform;
+            transform1.localScale = new Vector3(dir.x, dir.y, dir.z);
+            transform1.position += -transform1.right * (Speed * Time.deltaTime);
         }
         else if (Boss.transform.localScale.x < 0)
         {
-            transform.localScale = new Vector3(-dir.x, dir.y, dir.z);
-            transform.position += Speed * transform.right * Time.deltaTime;
+            var transform1 = transform;
+            transform1.localScale = new Vector3(-dir.x, dir.y, dir.z);
+            transform1.position += transform1.right * (Speed * Time.deltaTime);
         }
     }
     public void CloseCollider()
@@ -82,12 +80,12 @@ public class FoamAttack : MonoBehaviour
             {
                 if (transform.position.x < collision.transform.position.x)
                 {
-                    //collision.GetComponent<PlayerController>().onHit(Damge, Vector2.right);
+                    //collision.GetComponent<PlayerController>().onHit(damage, Vector2.right);
                     damageable.Hit(Damge, Vector2.right, DamageType.Melee);
                 }
                 else if (transform.position.x >= collision.transform.position.x)
                 {
-                    //collision.GetComponent<PlayerController>().onHit(Damge, Vector2.left);
+                    //collision.GetComponent<PlayerController>().onHit(damage, Vector2.left);
                     damageable.Hit(Damge, Vector2.left, DamageType.Melee);
                 }
                 controller.setBoolCanNotMove();

@@ -1,4 +1,5 @@
 ﻿using System;
+using Cainos.LucidEditor;
 using Enums;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,8 +9,8 @@ public class Tentacle : MonoBehaviour
     public float speed = 5.0f;
     public GameObject foamPrefab;
     public GameObject waterPrefab;
-    
-    public float maxHp;
+
+    private const float MaxHp = 3750;
     public float hp;
     public bool isDead;
 
@@ -35,6 +36,20 @@ public class Tentacle : MonoBehaviour
 
     private BossHealthBar _bossHealthBar;
     private Transform _submarineTransform;
+    
+    [Tooltip("激光射出的源点")]
+    public GameObject laserShotOrigin;
+    
+    [Tooltip("激光射出的Y范围")]
+    public float laserMinY;
+    public float laserMaxY;
+
+    [Tooltip("生成激光的数量")] 
+    public int laserCountMax = 9;
+    public int laserCountMin = 5; 
+    
+    [Header("触碰伤害")]
+    public int touchDamage = 5;
 
     private void Awake()
     {
@@ -43,7 +58,7 @@ public class Tentacle : MonoBehaviour
         _cTra = GetComponent<Transform>();
         _initial = _cTra.localScale;
         _mouse = transform.Find("Mouse");
-        _bossHealthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
+        _bossHealthBar = GameObject.Find("BossHealthBar").GetComponent<BossHealthBar>();
         _submarineTransform = GameObject.Find("submarine").transform;
         
         
@@ -54,7 +69,7 @@ public class Tentacle : MonoBehaviour
         }
         else
         {
-            _bossHealthBar.maxHp = maxHp;
+            _bossHealthBar.maxHp = MaxHp;
             _bossHealthBar.currentHp = hp;
         }
         
@@ -163,11 +178,14 @@ public class Tentacle : MonoBehaviour
         canMove = false;
         // 将 Boss 的速度置零
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        for (var i = 0; i < 5; i++)
+        for (var i = 0; i < Random.Range(laserCountMin, laserCountMax); i++)
         {
-            var r = Random.Range(-13, 17);
-            var foam = Instantiate(waterPrefab, null);
-            foam.transform.position = new Vector3(156, r, 0);
+            // 使用激光射出的Y范围
+            var randomY = Random.Range(laserMinY, laserMaxY);
+            var laserPos = new Vector3(laserShotOrigin.transform.position.x, randomY,
+                0);
+            var foam = Instantiate(waterPrefab, laserPos,
+                Quaternion.identity);
         }
     }
 
@@ -189,7 +207,7 @@ public class Tentacle : MonoBehaviour
                 isDead = true;
                 _animator.Play("Death");
                 break;
-            case > 0 and <= 30:
+            case > 0 and <= MaxHp * 0.8f:
                 _animator.Play("Attack_Water");
                 break;
         }
@@ -200,5 +218,14 @@ public class Tentacle : MonoBehaviour
         hp -= damage;
         _bossHealthBar.ChangeHealth(-damage);
         CharacterEvents.TriggerCharacterDamaged(gameObject, (int)damage, DamageType.Melee);
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            var damageable = other.GetComponent<Damageable>();
+            damageable.Hit(touchDamage, Vector2.zero, DamageType.Melee);
+        }
     }
 }
