@@ -50,5 +50,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Germany_Boss.unity
     guid: c2efceff7e4b71c46b9b2def48baaa49
+  - enabled: 1
+    path: Assets/Scenes/Germany_3.unity
+    guid: 24fbb28f330f0614cbb8f364e99044a5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4cc452b9547ca234593566a1c7d73344, type: 2}
