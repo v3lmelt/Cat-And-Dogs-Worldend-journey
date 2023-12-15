@@ -246,10 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls:
-    moveUp: 117
-    moveDown: 106
-    moveLeft: 104
-    moveRight: 107
+    moveUp: 119
+    moveDown: 115
+    moveLeft: 276
+    moveRight: 275
     attack: 32
     inputVector: {x: 0, y: 0}
 --- !u!95 &2587468273506164087
