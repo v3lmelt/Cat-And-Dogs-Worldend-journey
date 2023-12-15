@@ -67,7 +67,11 @@ public class TriggerDialog : MonoBehaviour
         if (!_playerInZone) return;
         if (Input.GetKeyDown(KeyCode.R) && DialogSystemNew.Instance.HasFinishedDialog)
         {
-            DialogSystemNew.Instance.InitDialogSystem(dialogText, transform.position + dialogCreatePosDelta, textSpeed);
+            // DialogSystemNew.Instance.InitDialogSystem(dialogText, transform.position + dialogCreatePosDelta, textSpeed);
+            //在相机正中间生成对话框
+            Vector3 pos = Camera.main.transform.position;
+            pos.z = 0;
+           DialogSystemNew.Instance.InitDialogSystem(dialogText, pos, textSpeed);
         }
     }
 }

@@ -51,7 +51,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 11
+  m_Priority: 9
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -101,10 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96cc0ce33375264c8d26e17d892b341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cat: {fileID: 0}
-  Dog: {fileID: 0}
-  CatBeforeExit: {x: 0, y: 0, z: 0}
-  DogBeforeExit: {x: 0, y: 0, z: 0}
+  cat: {fileID: 0}
+  dog: {fileID: 0}
+  catBeforeExit: {x: 0, y: 0, z: 0}
+  dogBeforeExit: {x: 0, y: 0, z: 0}
 --- !u!1 &8290156047402071478
 GameObject:
   m_ObjectHideFlags: 0

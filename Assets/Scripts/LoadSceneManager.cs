@@ -76,10 +76,7 @@ public class LoadSceneManager:Singleton<LoadSceneManager>
         // 当场返回编辑模式时，清除PlayerPrefs
         if (SceneManager.GetActiveScene().name != SceneManager.GetSceneByBuildIndex(0).name)
         {
-            foreach (String obj in ObjectsToControl)
-            {
-                PlayerPrefs.DeleteKey(obj);
-            }
+            PlayerPrefs.DeleteAll();
         }
     }
 }
