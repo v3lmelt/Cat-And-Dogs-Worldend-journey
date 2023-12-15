@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.40694594}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.125, y: 1.375}
+  m_Size: {x: 2.125, y: 2.188892}
   m_EdgeRadius: 0
 --- !u!114 &1592741659875402818
 MonoBehaviour:
@@ -148,7 +148,7 @@ MonoBehaviour:
   dialogCreatePosDelta: {x: 0, y: 0, z: 0}
   hintPrefab: {fileID: 3662009809187533326, guid: b4b50d2376db15a43856ff8a9331216a, type: 3}
   showHint: 1
-  dialogText: {fileID: 0}
+  dialogText: {fileID: 4900000, guid: 3052225ec03c8a14b97434765b9ec971, type: 3}
   textSpeed: 0.1
 --- !u!1001 &5175366917452242455
 PrefabInstance:

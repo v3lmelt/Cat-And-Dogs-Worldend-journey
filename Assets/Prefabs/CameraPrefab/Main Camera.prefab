@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6707568030215285590}
   - component: {fileID: 3599364442974440255}
   - component: {fileID: 7880991511546239968}
+  - component: {fileID: 4294528573630481158}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5061026517783690855}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000013035611, y: -0.00000006749077, z: 4.3758525e-11, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -102.70152, y: -7.0760894, z: -9.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35,7 +36,7 @@ Transform:
   - {fileID: 4208149657379348326}
   - {fileID: 2161035233193642127}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0.04, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &6707568030215285590
 Camera:
   m_ObjectHideFlags: 0
@@ -129,6 +130,20 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4294528573630481158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5061026517783690855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101deccb446eeb74ba5c2a413cff9ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraLeftEdge: {fileID: 7952325411602602771}
+  CameraRightEdge: {fileID: 7032182724488219541}
 --- !u!1 &7032182724488219541
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,8 +191,8 @@ EdgeCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 130807
-  m_LayerOverridePriority: 99
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -196,8 +211,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 15.93502, y: -10.339123}
-  - {x: 16.124832, y: 10.518414}
+  - {x: 0.036598206, y: 10.591477}
+  - {x: 0.09160614, y: -10.552872}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -228,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 7952325411602602771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,8 +264,8 @@ EdgeCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 130807
-  m_LayerOverridePriority: 99
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -269,8 +284,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -16.207008, y: -10.572998}
-  - {x: -16.223633, y: 10.674662}
+  - {x: 0.047790527, y: -10.588071}
+  - {x: 0.051071167, y: 10.586095}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
