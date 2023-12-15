@@ -6801,9 +6801,10 @@ PolygonCollider2D:
       - {x: 20.024849, y: -3.9116344}
       - {x: -52.59124, y: -4.053561}
       - {x: -52.631767, y: -20.803967}
-      - {x: 87.40515, y: -20.957146}
-      - {x: 87.40424, y: -12.810592}
-      - {x: 87.719086, y: -4.007557}
+      - {x: 79.69263, y: -21.00822}
+      - {x: 79.74417, y: -16.552532}
+      - {x: 79.84495, y: -14.393956}
+      - {x: 79.18934, y: -4.2118616}
   m_UseDelaunayMesh: 0
 --- !u!4 &1648093232
 Transform:
@@ -7915,7 +7916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.82298
+      value: -91.811356
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.y

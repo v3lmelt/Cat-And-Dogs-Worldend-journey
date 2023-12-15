@@ -20,18 +20,34 @@ public class CatAndDogInCamera : MonoBehaviour
         _cinemachineVirtualCamera = gameObject.GetComponent<CinemachineVirtualCamera>();
         gameObject.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = GameObject.Find("Level Border").GetComponent<PolygonCollider2D>();
         
-        
-    }
-
-    private void Start()
-    {
         cat = GameObject.Find("Cat").transform;
         dog = GameObject.Find("Dog").transform;
         _catAndDog = new GameObject("CatAndDog").transform;
+        
         _cm = Camera.main;
 
         if (cat != null) _catDamageable = cat.GetComponent<PlayerController>();
         if (dog != null) _dogDamageable = cat.GetComponent<PlayerController>();
+
+        var catPos = _catDamageable.transform.position;
+        var dogPos = _dogDamageable.transform.position;
+        _catAndDog.position = (catPos + dogPos) / 2;
+    }
+
+    private void Start()
+    {
+        // cat = GameObject.Find("Cat").transform;
+        // dog = GameObject.Find("Dog").transform;
+        // _catAndDog = new GameObject("CatAndDog").transform;
+        //
+        // _cm = Camera.main;
+        //
+        // if (cat != null) _catDamageable = cat.GetComponent<PlayerController>();
+        // if (dog != null) _dogDamageable = cat.GetComponent<PlayerController>();
+        //
+        // var catPos = _catDamageable.transform.position;
+        // var dogPos = _dogDamageable.transform.position;
+        // _catAndDog.position = (catPos + dogPos) / 2;
     }
 
     
