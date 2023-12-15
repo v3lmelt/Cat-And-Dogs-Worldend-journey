@@ -2019,7 +2019,7 @@ Transform:
   m_GameObject: {fileID: 1519160572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8617935, y: -4.0819798, z: -10}
+  m_LocalPosition: {x: 3.271348, y: -4.06517, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2376,7 +2376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597993382112833311, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -220
+      value: -178
       objectReference: {fileID: 0}
     - target: {fileID: 6941235857355140039, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
       propertyPath: buffTime
@@ -2529,11 +2529,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
       propertyPath: enemySpawnMax
-      value: 75
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
       propertyPath: enemySpawnMin
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
       propertyPath: spawnEnemyTimer
