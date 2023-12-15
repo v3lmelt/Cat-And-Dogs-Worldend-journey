@@ -1,237 +1,263 @@
+using System;
+using Cainos.LucidEditor;
 using Enums;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
-public enum BossState
+namespace Boss1
 {
-    FireBullet,
-    Dash,
-    Idle,
-    BeHit,
-    Death,
-}
-
-public class Villain : MonoBehaviour
-{
-    Transform C_tra;
-    Transform Muzzle;
-    Rigidbody2D C_rig;
-    Animator C_ani;
-    //public AudioSource HitAudio;
-    public GameObject FireBullet;
-    public GameObject Player;//��ȡ����ҵ�λ��
-    public GameObject Player2;//��ȡ����ҵ�λ��
-
-    Vector2 Initial;
-
-    BossState state;
-
-    public float MaxHp;
-    public float Hp;
-
-    public int MoveDamge;
-
-    public float Speed;
-
-    public float IdleTime;
-    public float time;
-
-    public int FireBulletAttackTime;
-
-    public bool isHit;
-    public bool isDead;
-
-    private void Awake()
+    public enum BossState
     {
-        C_tra = GetComponent<Transform>();
-        C_rig = GetComponent<Rigidbody2D>();
-        C_ani = GetComponent<Animator>();
-        Player = GameObject.Find("Player");
-        Player2 = GameObject.Find("Player_cat");
-        Muzzle = transform.Find("Muzzle");
-
-        Initial = C_tra.localScale;
-
-        state = BossState.Idle;
-
-        MaxHp = 200;
-        Hp = MaxHp;
-
-        MoveDamge = 20;
-
-        Speed = 12;
-
-        isDead = false;
-
-        IdleTime = 5f;
-        time = 1f;
-
-        FireBulletAttackTime = 3;
+        FireBullet,
+        Dash,
+        Idle,
+        BeHit,
+        Death,
     }
 
-    // Update is called once per frame
-    void Update()
+    public class Villain : MonoBehaviour
     {
-        CheckHp();
-        switch (state)
+        private Transform _cTra;
+        private Transform _muzzle;
+        private Rigidbody2D _cRig;
+
+        private Animator _cAni;
+        //public AudioSource HitAudio;
+        public GameObject fireBullet;
+
+        private Vector2 _initial;
+
+        private BossState _state;
+        
+        [Header("基本属性")]
+        public float maxHp;
+        public float hp;
+
+        public float speed;
+
+        public float idleTime;
+
+        public int fireBulletAttackTime;
+        [Header("Boss状态")]
+        public bool isHit;
+        public bool isDead;
+        
+        [Header("怪物生成")]
+        [Tooltip("在Boss空闲时生成的怪物数量")]
+        public int enemySpawnMax = 8;
+        public int enemySpawnMin = 4;
+
+        public float spawnEnemyTimerElapsed = 0f;
+        [Tooltip("生成敌人的计时器")]
+        public float spawnEnemyTimer = 15f;
+
+        private BossHealthBar _healthBar;
+        private void Awake()
         {
-            case BossState.FireBullet:
+            _cTra = GetComponent<Transform>();
+            _cRig = GetComponent<Rigidbody2D>();
+            _cAni = GetComponent<Animator>();
+            
+            GameObject.Find("Dog");
+            GameObject.Find("Cat");
+            
+            _muzzle = transform.Find("Muzzle");
+
+            _initial = _cTra.localScale;
+
+            _state = BossState.Idle;
+            
+            _healthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
+            // boss血量初始化工作
+            if (_healthBar == null)
+            {
+                Debug.LogError("Can't find healthbar");
+                return;
+            }
+            
+            
+            _healthBar.maxHp = maxHp;
+            _healthBar.currentHp = hp;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            CheckHp();
+            switch (_state)
+            {
+                case BossState.FireBullet:
                 {
                     FireBulletAttack();
                     break;
                 }
-            case BossState.Dash:
+                case BossState.Dash:
                 {
                     DashSkill();
                     break;
                 }
-            case BossState.Idle:
+                case BossState.Idle:
                 {
-                    IdleProccess();
+                    IdleProcess();
                     break;
                 }
-            case BossState.BeHit:
+                case BossState.BeHit:
                 {
-                    BeHitProccess();
+                    BeHitProcess();
                     break;
                 }
-            case BossState.Death:
+                case BossState.Death:
                 {
-                    C_ani.Play("Death");
+                    _cAni.Play("Death");
                     break;
                 }
-        }
-    }
-
-    public void FireBulletAttack()
-    {
-        C_ani.Play("Attack");
-        if (FireBulletAttackTime <= 0 && !isDead)
-        {
-            state = BossState.Idle;
-        }
-        else if (isDead)
-        {
-            state = BossState.Death;
-        }
-    }
-    public void FireBulletCreate()
-    {
-        if (C_tra.localScale.x == Initial.x)
-        {
-            for (int i = -5; i < 2; i++)
-            {
-                GameObject firebullet = Instantiate(FireBullet, null);
-                Vector3 dir = Quaternion.Euler(0, i * 15, 0) * -transform.right;
-                firebullet.transform.position = Muzzle.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
             }
         }
-        else if (C_tra.localScale.x == -Initial.x)
+
+        public void FireBulletAttack()
         {
-            for (int i = -1; i < 5; i++)
+            _cAni.Play("Attack");
+            if (fireBulletAttackTime <= 0 && !isDead)
             {
-                GameObject firebullet = Instantiate(FireBullet, null);
-                Vector3 dir = Quaternion.Euler(0, i * 15, 0) * transform.right;
-                firebullet.transform.position = Muzzle.position + dir * 1.0f;
-                firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                _state = BossState.Idle;
+            }
+            else if (isDead)
+            {
+                _state = BossState.Death;
             }
         }
-        FireBulletAttackTime -= 1;
-    }
-    public void DashSkill()
-    {
-        if (!isDead)
+        public void FireBulletCreate()
         {
-            Dash();
-            IdleTime = 5f;
+            if (Math.Abs(_cTra.localScale.x - _initial.x) < 0.005f)
+            {
+                for (int i = -5; i < 2; i++)
+                {
+                    GameObject firebullet = Instantiate(fireBullet, null);
+                    Vector3 dir = Quaternion.Euler(0, i * 15, 0) * -transform.right;
+                    firebullet.transform.position = _muzzle.position + dir * 1.0f;
+                    firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                }
+            }
+            else if (Math.Abs(_cTra.localScale.x - (-_initial.x)) < 0.005f)
+            {
+                for (int i = -1; i < 5; i++)
+                {
+                    GameObject firebullet = Instantiate(fireBullet, null);
+                    Vector3 dir = Quaternion.Euler(0, i * 15, 0) * transform.right;
+                    firebullet.transform.position = _muzzle.position + dir * 1.0f;
+                    firebullet.transform.rotation = Quaternion.Euler(0, 0, i * 15);
+                }
+            }
+            fireBulletAttackTime -= 1;
         }
-        else if (isDead)
+        public void DashSkill()
         {
-            state = BossState.Death;
+            if (!isDead)
+            {
+                Dash();
+                idleTime = 5f;
+            }
+            else if (isDead)
+            {
+                _state = BossState.Death;
+            }
         }
-    }
-    public void Dash()//��ײ 
-    {
-        if (C_tra.localScale.x == Initial.x)
+        public void Dash()//冲撞 
         {
-            C_ani.Play("Walk");
-            C_rig.velocity = new Vector2(-Speed, C_rig.velocity.y);
+            if (Math.Abs(_cTra.localScale.x - _initial.x) < 0.005f)
+            {
+                _cAni.Play("Walk");
+                _cRig.velocity = new Vector2(-speed, _cRig.velocity.y);
+            }
+            else if (Math.Abs(_cTra.localScale.x - (-_initial.x)) < 0.005f)
+            {
+                _cAni.Play("Walk");
+                _cRig.velocity = new Vector2(speed, _cRig.velocity.y);
+            }
         }
-        else if (C_tra.localScale.x == -Initial.x)
+        public void IdleProcess()
         {
-            C_ani.Play("Walk");
-            C_rig.velocity = new Vector2(Speed, C_rig.velocity.y);
+            _cAni.Play("Idle");
+            idleTime -= Time.deltaTime;
+            spawnEnemyTimerElapsed += Time.deltaTime;
+            
+            if (spawnEnemyTimerElapsed >= spawnEnemyTimer)
+            {
+                StartCoroutine(BossEnemySpawner.Instance.SpawnEnemy(Random.Range(
+                    enemySpawnMin, enemySpawnMax)));
+                spawnEnemyTimerElapsed = 0f;
+            }
+            if (hp <= maxHp / 2 && idleTime > 0)
+            {
+                fireBulletAttackTime = 5;
+            }
+            else if (hp > maxHp / 2 && idleTime > 0)
+            {
+                fireBulletAttackTime = 3;
+            }
+            if (idleTime <= 0 && !isHit && !isDead)
+            {
+                _state = BossState.Dash;
+            }
+            else if (isHit && !isDead)
+            {
+                _state = BossState.BeHit;
+            }
+            else if (isDead)
+            {
+                _state = BossState.Death;
+            }
         }
-    }
-    public void IdleProccess()
-    {
-        C_ani.Play("Idle");
-        IdleTime -= Time.deltaTime;
-        if (Hp <= MaxHp / 2 && IdleTime > 0)
+        public void BeHitProcess()
         {
-            FireBulletAttackTime = 5;
+            _cAni.Play("BeHit");
+            idleTime -= Time.deltaTime;
+            if (!isHit && !isDead)
+            {
+                _state = BossState.Idle;
+            }
+            else if (isDead)
+            {
+                _state = BossState.Death;
+            }
+            
+            
         }
-        else if (Hp > MaxHp / 2 && IdleTime > 0)
+        public void BeHit(float damage)
         {
-            FireBulletAttackTime = 3;
+            hp -= damage;
+            isHit = true;
+            
+            _healthBar.ChangeHealth(-damage);
+            CharacterEvents.TriggerCharacterDamaged(gameObject, (int)damage, DamageType.Melee);
         }
-        if (IdleTime <= 0 && !isHit && !isDead)
+        public void BeHitOver()
         {
-            state = BossState.Dash;
+            isHit = false;
         }
-        else if (isHit && !isDead)
+        public void CheckHp()
         {
-            state = BossState.BeHit;
+            if (hp <= 0)
+            {
+                isDead = true;
+            }
         }
-        else if (isDead)
+        public void Death()
         {
-            state = BossState.Death;
+            Destroy(gameObject);
         }
-    }
-    public void BeHitProccess()
-    {
-        C_ani.Play("BeHit");
-        IdleTime -= Time.deltaTime;
-        if (!isHit && !isDead)
-        {
-            state = BossState.Idle;
-        }
-        else if (isDead)
-        {
-            state = BossState.Death;
-        }
-    }
-    public void BeHit(float Damge)
-    {
-        Hp -= Damge;
-        isHit = true;
-    }
-    public void BeHitOver()
-    {
-        isHit = false;
-    }
-    public void CheckHp()
-    {
-        if (Hp <= 0)
-        {
-            isDead = true;
-        }
-    }
-    public void Death()
-    {
-        Destroy(gameObject);
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.collider.CompareTag("AirWall"))
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            C_tra.localScale = new Vector3(-C_tra.localScale.x, C_tra.localScale.y, C_tra.localScale.z);
-            state = BossState.FireBullet;
+
+            if (collision.collider.CompareTag("AirWall"))
+            {
+                var localScale = _cTra.localScale;
+                localScale = new Vector3(-localScale.x, localScale.y, localScale.z);
+            
+                _cTra.localScale = localScale;
+                _state = BossState.FireBullet;
+            }
         }
     }
 }

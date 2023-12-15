@@ -5,11 +5,12 @@ public static class PlayerStatUtil
     private static PlayerController[] _playerControllers = new PlayerController[2];
     private static Attack[] _playerAttacks = new Attack[2];
     private static Damageable[] _playerDamageables = new Damageable[2];
+    private static ProjectileLauncher _dogMagicPower;
     
     public static readonly string[] SceneExcludeFromGettingComponents = new string[]{"StartMenu", "Background Story",};
-    public static readonly string[] SceneExcludeFromStatRestore = new string[]{"StartMenu", "Background Story", "GameplayScene", 
+    public static readonly string[] SceneExcludeFromStatRestore = new string[]{"StartMenu", "Background Story", "GameplayScene",
         "Level1"};
-    public static readonly string[] SceneExcludeFromStatRecord = new string[]{"StartMenu", "Background Story", "GameplayScene"};
+    public static readonly string[] SceneExcludeFromStatRecord = new string[]{"StartMenu", "Background Story" };
     private struct CatStats
     {
         public static int CurrentHealth;
@@ -30,6 +31,8 @@ public static class PlayerStatUtil
         public static int MaxMp;
 
         public static int AttackDamage;
+        public static int MagicDamage;
+        public static int RestoreMp;
     }
     
         public static void IncreasePlayerHp(int increaseAmount)
@@ -52,10 +55,18 @@ public static class PlayerStatUtil
         {
             foreach (var d in _playerAttacks)
             {
-                d.attackDamage += increaseAmount;
+                d.attackDamage += increaseAmount; 
             }
+            GameManager.Instance.dog.gameObject.GetComponent<ProjectileLauncher>().MagicDamage += increaseAmount*5;
         }
-        
+        public static void IncreaseRestoreMp(int increaseAmount)
+         {
+            foreach(var d in _playerAttacks)
+            {
+            d.restoreMp += increaseAmount;
+              }
+        }
+            
         // 获取最新的操纵对象! 否则有可能找不到对应的对象.
         public static void GetComponents()
         {
@@ -65,6 +76,7 @@ public static class PlayerStatUtil
             _playerAttacks[1] = GameManager.Instance.dog.GetComponentInChildren<Attack>();
             _playerDamageables[0] = GameManager.Instance.cat.GetComponent<Damageable>();
             _playerDamageables[1] = GameManager.Instance.dog.GetComponent<Damageable>();
+            _dogMagicPower = GameManager.Instance.dog.GetComponent<ProjectileLauncher>();
         }
 
         public static void RecordPlayerStats()
@@ -81,6 +93,8 @@ public static class PlayerStatUtil
              DogStats.CurrentMp = _playerDamageables[1].MP;
              DogStats.MaxMp = _playerDamageables[1].MaxMP;
              DogStats.AttackDamage = _playerAttacks[1].attackDamage;
+             DogStats.MagicDamage = _dogMagicPower.MagicDamage;
+             DogStats.RestoreMp = _playerAttacks[1].restoreMp;
         }
 
         public static void RestorePlayerStats()
@@ -96,5 +110,7 @@ public static class PlayerStatUtil
             _playerDamageables[1].MP = DogStats.CurrentMp;
             _playerDamageables[1].MaxMP = DogStats.MaxMp;
             _playerAttacks[1].attackDamage = DogStats.AttackDamage;
-        }
+            _dogMagicPower.MagicDamage = DogStats.MagicDamage;
+        _playerAttacks[1].restoreMp = DogStats.RestoreMp;
+    }
     }

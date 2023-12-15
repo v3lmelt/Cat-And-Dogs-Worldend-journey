@@ -115,8 +115,8 @@ public class TreasureBox : MonoBehaviour
                 var spawnedItem = Instantiate(item, new Vector3(
                     position.x, position.y, position.z), Quaternion.identity);
                 
-                var xForce = Random.Range(0, 3) * 1f;
-                var yForce = Random.Range(1, 4) * 2f;
+                var xForce = Random.Range(-4,8) * 1f;
+                var yForce = Random.Range(4, 10) * 2f;
                 spawnedItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(xForce, yForce), ForceMode2D.Impulse);
             }
         }

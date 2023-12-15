@@ -175,11 +175,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
+    - - {x: -0.93497145, y: 1.9166363}
       - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+      - {x: 0.29217833, y: -1.2123368}
+      - {x: 1.2710195, y: -1.2208668}
+      - {x: 1.2810495, y: 1.3539811}
   m_UseDelaunayMesh: 0
 --- !u!114 &6660980295667776276
 MonoBehaviour:
@@ -775,10 +775,10 @@ MonoBehaviour:
   mpChanged:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 100
-  _health: 100
-  _mp: 100
-  _maxMP: 100
+  _maxHealth: 150
+  _health: 150
+  _mp: 60
+  _maxMP: 60
   MagicCost: 20
   _hasMp: 1
   _isAlive: 1
@@ -815,6 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchPoint: {fileID: 0}
   projectilePrefab: {fileID: 5897187740819283956, guid: 49e72d1919201eb41a7a5a48dbef0172, type: 3}
+  MagicDamage: 100
 --- !u!114 &314126155989683050
 MonoBehaviour:
   m_ObjectHideFlags: 0
