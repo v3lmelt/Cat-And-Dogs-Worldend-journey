@@ -689,10 +689,11 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -12.7613535, y: 17.052317}
       - {x: -12.545847, y: -13.158164}
-      - {x: 76.46668, y: -12.798492}
-      - {x: 76.67216, y: -12.866985}
-      - {x: 76.84844, y: -5.0980773}
-      - {x: 76.80197, y: 16.998018}
+      - {x: 17.06824, y: -12.867301}
+      - {x: 38.982037, y: -12.652069}
+      - {x: 39.04108, y: -10.817043}
+      - {x: 38.7781, y: -2.1695895}
+      - {x: 38.73162, y: 16.412321}
   m_UseDelaunayMesh: 0
 --- !u!4 &378037855
 Transform:
@@ -1992,9 +1993,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 110.6
+  field of view: 60
   orthographic: 1
-  orthographic size: 10.5855465
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2019,7 +2020,7 @@ Transform:
   m_GameObject: {fileID: 1519160572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.271348, y: -4.06517, z: -10}
+  m_LocalPosition: {x: 10.39, y: -9.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2282,6 +2283,10 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5115712528052486699, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
+      propertyPath: m_Name
+      value: BossHealthBar
+      objectReference: {fileID: 0}
     - target: {fileID: 5590233103274060824, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2542,6 +2547,10 @@ PrefabInstance:
     - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
       propertyPath: fireBulletAttackTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6213826861454196307, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
+      propertyPath: sceneToLoadAfterDeath
+      value: GermanyToJapen
       objectReference: {fileID: 0}
     - target: {fileID: 8114224406466626729, guid: 0637401c679d36e4e89481bf50a4c636, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size

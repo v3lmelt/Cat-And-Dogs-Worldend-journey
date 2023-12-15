@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
 using Cainos.LucidEditor;
 using Enums;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace Boss1
@@ -51,6 +54,9 @@ namespace Boss1
         [Tooltip("生成敌人的计时器")]
         public float spawnEnemyTimer = 15f;
 
+        [Tooltip("结束后去的场景")] 
+        public string sceneToLoadAfterDeath;
+        
         private BossHealthBar _healthBar;
         private void Awake()
         {
@@ -67,7 +73,7 @@ namespace Boss1
 
             _state = BossState.Idle;
             
-            _healthBar = GameObject.Find("HealthBar").GetComponent<BossHealthBar>();
+            _healthBar = GameObject.Find("BossHealthBar").GetComponent<BossHealthBar>();
             // boss血量初始化工作
             if (_healthBar == null)
             {
@@ -244,6 +250,14 @@ namespace Boss1
         }
         public void Death()
         {
+            StartCoroutine(LoadScene());
+        }
+
+        private IEnumerator LoadScene()
+        {
+            yield return new WaitForSeconds(1f);
+            LoadSceneManager.Instance.LoadScene(sceneToLoadAfterDeath);
+            
             Destroy(gameObject);
         }
 

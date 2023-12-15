@@ -2025,6 +2025,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4818231896526638551, guid: 10aab9aed25460b45bda218d9fde24c0, type: 3}
+      propertyPath: destination
+      value: Japan_1
+      objectReference: {fileID: 0}
     - target: {fileID: 8324826735495088907, guid: 10aab9aed25460b45bda218d9fde24c0, type: 3}
       propertyPath: m_Name
       value: TpDoor
