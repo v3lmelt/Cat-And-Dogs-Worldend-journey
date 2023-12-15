@@ -461,7 +461,7 @@ MonoBehaviour:
   attack: 257
   moveLeft: 276
   moveRight: 275
-  rangedAttack: 102
+  rangedAttack: 258
   jump: 273
   inputVector: {x: 0, y: 0}
   hasDash: 0

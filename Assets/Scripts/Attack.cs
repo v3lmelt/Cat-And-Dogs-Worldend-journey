@@ -56,6 +56,11 @@ public class Attack : MonoBehaviour
         if (collision.gameObject.CompareTag("Boss1"))
         {
             collision.GetComponent<Villain>().BeHit(attackDamage);
+            Damageable attackerDamageable = transform.parent.GetComponent<Damageable>();
+            if (attackerDamageable != null)
+            {
+                attackerDamageable.RestoreMP(restoreMp);
+            }
         }
         if (collision.gameObject.CompareTag("Boss2"))
         {
