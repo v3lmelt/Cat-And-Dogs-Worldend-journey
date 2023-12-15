@@ -77,12 +77,12 @@ public class FireBullet : MonoBehaviour
             {
                 if (transform.position.x < collision.transform.position.x)
                 {
-                    //collision.GetComponent<PlayerController>().onHit(Damge, Vector2.right);
+                    //collision.GetComponent<PlayerController>().onHit(damage, Vector2.right);
                     damageable.Hit(Damge, Vector2.right, DamageType.Melee);
                 }
                 else if (transform.position.x >= collision.transform.position.x)
                 {
-                    //collision.GetComponent<PlayerController>().onHit(Damge, Vector2.left);
+                    //collision.GetComponent<PlayerController>().onHit(damage, Vector2.left);
                     damageable.Hit(Damge, Vector2.left, DamageType.Melee);
                 }
             }

@@ -1,5 +1,3 @@
-using System;
-using UnityEditor.UI;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]

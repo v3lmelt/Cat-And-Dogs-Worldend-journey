@@ -2,6 +2,7 @@ using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WaterAttack : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class WaterAttack : MonoBehaviour
     Animator animator;
     Collider2D collider2d;
 
-    Vector3 dir;
+    Vector3 dir;              
 
-    public float Speed;
+    public float speed = 25;
 
-    public int Damge;
+    public int damage = 8;
 
-    public float LifeTime;
+    public float lifeTime = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,20 +26,14 @@ public class WaterAttack : MonoBehaviour
         collider2d = GetComponent<Collider2D>();
 
         dir = transform.localScale;
-
-        Speed = 8;
-
-        Damge = 8;
-
-        LifeTime = 7f;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        LifeTime -= Time.deltaTime;
-        if (LifeTime <= 0 || Boss.GetComponent<Tentacle>().isDead)
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0 || Boss.GetComponent<Tentacle>().isDead)
         {
             Destroy(gameObject);
         }
@@ -49,12 +44,12 @@ public class WaterAttack : MonoBehaviour
         if (Boss.transform.localScale.x > 0)
         {
             transform.localScale = new Vector3(dir.x, dir.y, dir.z);
-            transform.position += Speed * -transform.right * Time.deltaTime;
+            transform.position += speed * -transform.right * Time.deltaTime;
         }
         else if (Boss.transform.localScale.x < 0)
         {
             transform.localScale = new Vector3(-dir.x, dir.y, dir.z);
-            transform.position += Speed * transform.right * Time.deltaTime;
+            transform.position += speed * transform.right * Time.deltaTime;
         }
     }
     public void CloseCollider()
@@ -65,7 +60,7 @@ public class WaterAttack : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Submarine"))
         {
@@ -74,13 +69,13 @@ public class WaterAttack : MonoBehaviour
             {
                 if (transform.position.x < collision.transform.position.x)
                 {
-                    //collision.GetComponent<PlayerController>().onHit(Damge, Vector2.right);
-                    damageable.Hit(Damge, Vector2.right, DamageType.Melee);
+                    //collision.GetComponent<PlayerController>().onHit(damage, Vector2.right);
+                    damageable.Hit(damage, Vector2.right, DamageType.Melee);
                 }
                 else if (transform.position.x >= collision.transform.position.x)
                 {
-                    //collision.GetComponent<PlayerController>().onHit(Damge, Vector2.left);
-                    damageable.Hit(Damge, Vector2.left, DamageType.Melee);
+                    //collision.GetComponent<PlayerController>().onHit(damage, Vector2.left);
+                    damageable.Hit(damage, Vector2.left, DamageType.Melee);
                 }
             }
         }
