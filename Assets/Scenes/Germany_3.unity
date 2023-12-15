@@ -3310,7 +3310,7 @@ GameObject:
   - component: {fileID: 403014325}
   - component: {fileID: 403014326}
   m_Layer: 0
-  m_Name: Level Border right
+  m_Name: LevelBorderRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3778,11 +3778,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.0626106
+      value: -2.8072338
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.47630998
+      value: 0.47581
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3985,7 +3985,7 @@ GameObject:
   - component: {fileID: 671408053}
   - component: {fileID: 671408054}
   m_Layer: 0
-  m_Name: Backround Colider
+  m_Name: GroundCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4627,7 +4627,7 @@ GameObject:
   - component: {fileID: 1150899649}
   - component: {fileID: 1150899650}
   m_Layer: 0
-  m_Name: Level Border left
+  m_Name: LevelBorderLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
