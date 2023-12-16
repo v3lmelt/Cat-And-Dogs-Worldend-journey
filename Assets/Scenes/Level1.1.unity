@@ -5795,6 +5795,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 34678629264704807, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
+      propertyPath: restoreMp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34678629264704807, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2619111352904565243, guid: 7f784f421b1b28c42bb6e7e4b3206cf3, type: 3}
       propertyPath: m_Name
       value: Cat
@@ -5887,15 +5895,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -101.91652
+      value: -93.01865
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.0727096
+      value: -7.0343394
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.999999
+      value: -9.999998
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalRotation.w

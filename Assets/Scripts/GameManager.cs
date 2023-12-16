@@ -64,6 +64,9 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("死了");
         cat.gameObject.SetActive(false);
         dog.gameObject.SetActive(false);
+       
+        cat.GetComponent<Damageable>().Health = cat.GetComponent<Damageable>().MaxHealth;
+        dog.GetComponent<Damageable>().Health = dog.GetComponent<Damageable>().MaxHealth;
    
         StartCoroutine(WaitToRemake());
     }
@@ -78,9 +81,11 @@ public class GameManager : Singleton<GameManager>
                 yield return new WaitForSeconds(0.001f); //Wait期间会自动调用Update函数 这里直接写Instance.FindCatAndDog()是找不到猫狗的 
                 cat.transform.position = remakePoint;
                 dog.transform.position = remakePoint;
+            
         }
         else
         {
+            
             cat.GetComponent<Damageable>().IsAlive = true;
             dog.GetComponent<Damageable>().IsAlive = true;
 
@@ -88,6 +93,7 @@ public class GameManager : Singleton<GameManager>
             dog.gameObject.SetActive(true);
             cat.transform.position = remakePoint;
             dog.transform.position = remakePoint;
+
         }
         yield break;
     }
