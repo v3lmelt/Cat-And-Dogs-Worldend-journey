@@ -51,6 +51,8 @@ public class Tentacle : MonoBehaviour
     [Header("触碰伤害")]
     public int touchDamage = 5;
 
+    public string sceneChangeAfterDeath = "StartMenu";
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -196,6 +198,7 @@ public class Tentacle : MonoBehaviour
 
     public void Death()
     {
+        LoadSceneManager.Instance.LoadScene("sceneChangeAfterDeath");
         Destroy(gameObject);
     }
 

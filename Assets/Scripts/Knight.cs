@@ -141,4 +141,9 @@ public class Knight : MonoBehaviour
             FlipDirection();
         }
     }
+
+    public void OnDeath()
+    {
+        Destroy(gameObject);
+    }
 }

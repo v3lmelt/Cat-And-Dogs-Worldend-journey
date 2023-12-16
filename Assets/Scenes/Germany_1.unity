@@ -226,6 +226,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2161035233193642127, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208149657379348326, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.08
+      objectReference: {fileID: 0}
     - target: {fileID: 5061026517783690855, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -236,11 +244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.2
+      value: -5.1958714
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 1.08069
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2351,8 +2359,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 12.730729, y: 9.483564}
-      - {x: -18.935575, y: 9.774709}
-      - {x: -19.07995, y: -7.462876}
+      - {x: -18.721401, y: 9.060793}
+      - {x: -18.687296, y: -7.17731}
       - {x: 102.014656, y: -6.9970374}
       - {x: 101.955414, y: 2.05521}
       - {x: 101.89073, y: 9.442865}

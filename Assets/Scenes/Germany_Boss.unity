@@ -234,7 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 74354877}
   - component: {fileID: 74354878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level Border left
   m_TagString: AirWall
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 616499460}
   - component: {fileID: 616499461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level Border right
   m_TagString: AirWall
   m_Icon: {fileID: 0}
@@ -2381,7 +2381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5597993382112833311, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -178
+      value: -226
       objectReference: {fileID: 0}
     - target: {fileID: 6941235857355140039, guid: cf23764fa001349478a4cdca4a3459e3, type: 3}
       propertyPath: buffTime

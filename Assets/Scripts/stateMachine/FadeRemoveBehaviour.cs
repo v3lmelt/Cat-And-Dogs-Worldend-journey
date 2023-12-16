@@ -25,7 +25,7 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (fadeDelay>fadeDelayElapsed)
+        if (fadeDelay > fadeDelayElapsed)
         {
             fadeDelayElapsed += Time.deltaTime;
         }
@@ -39,9 +39,11 @@ public class FadeRemoveBehaviour : StateMachineBehaviour
 
             if (timeElapsed > fadetime)
             {
+                Debug.Log("Prepare to destroy!");
                 if (!TagUtil.ComparePlayerTag(objToRemove))
                 {
-                   Instantiate(GameManager.Instance.CoinPrefab, objToRemove.transform.position, Quaternion.identity);
+                    Debug.Log("Inside destroy!");
+                    Instantiate(GameManager.Instance.CoinPrefab, objToRemove.transform.position, Quaternion.identity);
                     Destroy(objToRemove);
                 }
                 else

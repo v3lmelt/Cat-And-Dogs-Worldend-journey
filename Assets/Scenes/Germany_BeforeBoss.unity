@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096450630703171743, guid: 1d82f56bcb1287a4880d508c3aa22890, type: 3}
       propertyPath: destination
-      value: Germant_3
+      value: Germany_3
       objectReference: {fileID: 0}
     - target: {fileID: 6159142748659215444, guid: 1d82f56bcb1287a4880d508c3aa22890, type: 3}
       propertyPath: m_Name
@@ -384,7 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327832300}
   - component: {fileID: 327832301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Backround Colider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -688,6 +688,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2161035233193642127, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208149657379348326, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.17
+      objectReference: {fileID: 0}
     - target: {fileID: 5061026517783690855, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1079,8 +1087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8165573b6d34442a853fbaebde2e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: Germany_2
-  TpPoint: {x: 0, y: 0, z: 0}
+  destination: Germany_Boss
+  TpPoint: {x: -14.03, y: -10.86, z: 0}
   catReady: 0
   dogReady: 0
   arrow: {fileID: 1333578708}
