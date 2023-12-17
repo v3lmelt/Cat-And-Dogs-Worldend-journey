@@ -1200,11 +1200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.741621
+      value: -17.927538
       objectReference: {fileID: 0}
     - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.9770203
+      value: 4.9776006
       objectReference: {fileID: 0}
     - target: {fileID: 5937178571481074048, guid: b9fcf9f7b38cbbd43b957c51e46c39e7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7030,15 +7030,15 @@ PrefabInstance:
       objectReference: {fileID: 344653915}
     - target: {fileID: 5096450630703171743, guid: 1d82f56bcb1287a4880d508c3aa22890, type: 3}
       propertyPath: TpPoint.x
-      value: -1
+      value: -11.8
       objectReference: {fileID: 0}
     - target: {fileID: 5096450630703171743, guid: 1d82f56bcb1287a4880d508c3aa22890, type: 3}
       propertyPath: TpPoint.y
-      value: -13
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5096450630703171743, guid: 1d82f56bcb1287a4880d508c3aa22890, type: 3}
       propertyPath: destination
-      value: Level1.2
+      value: Japan_1
       objectReference: {fileID: 0}
     - target: {fileID: 6159142748659215444, guid: 1d82f56bcb1287a4880d508c3aa22890, type: 3}
       propertyPath: m_Name

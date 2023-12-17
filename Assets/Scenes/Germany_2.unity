@@ -6894,6 +6894,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogSystemNew
       objectReference: {fileID: 0}
+    - target: {fileID: 5589178710779666044, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589178710779666044, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6920,11 +6928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 32
+      value: 14.1966
       objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 8
+      value: 3.893
       objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6956,11 +6964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -9.5721
       objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14
+      value: 16.0534
       objectReference: {fileID: 0}
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6973,6 +6981,10 @@ PrefabInstance:
     - target: {fileID: 8032267776548709217, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119918664628240848, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7989,11 +8001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.82027
+      value: -91.82128
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.97119
+      value: -19.971199
       objectReference: {fileID: 0}
     - target: {fileID: 7260046523265268817, guid: d00276f5dd931a645a4b7226dd21b84e, type: 3}
       propertyPath: m_LocalPosition.z
