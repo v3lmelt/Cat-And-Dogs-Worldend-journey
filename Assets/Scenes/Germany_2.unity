@@ -6890,6 +6890,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1104116713}
     m_Modifications:
+    - target: {fileID: 2310105327501807685, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5181438457533165927, guid: 5ec2bd77dc41c7748a3f721416dc0ec7, type: 3}
       propertyPath: m_Name
       value: DialogSystemNew

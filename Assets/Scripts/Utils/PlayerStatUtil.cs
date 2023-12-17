@@ -7,10 +7,10 @@ public static class PlayerStatUtil
     private static Damageable[] _playerDamageables = new Damageable[2];
     private static ProjectileLauncher _dogMagicPower;
     
-    public static readonly string[] SceneExcludeFromGettingComponents = new string[]{"StartMenu", "Background Story",};
-    public static readonly string[] SceneExcludeFromStatRestore = new string[]{"StartMenu", "Background Story", "GameplayScene",
-        "Level1"};
-    public static readonly string[] SceneExcludeFromStatRecord = new string[]{"StartMenu", "Background Story" };
+    public static readonly string[] SceneExcludeFromGettingComponents = {"StartMenu", "Background Story", "Japan_2"};
+    public static readonly string[] SceneExcludeFromStatRestore = {"StartMenu", "Background Story", "GameplayScene",
+        "Level1", "Japan_2"};
+    public static readonly string[] SceneExcludeFromStatRecord = {"StartMenu", "Background Story", "Japan_2"};
     public struct CatStats
     {
         public static int CurrentHealth;

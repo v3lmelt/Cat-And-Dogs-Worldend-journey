@@ -198,7 +198,7 @@ public class Tentacle : MonoBehaviour
 
     public void Death()
     {
-        LoadSceneManager.Instance.LoadScene("sceneChangeAfterDeath");
+        LoadSceneManager.Instance.LoadScene(sceneChangeAfterDeath);
         Destroy(gameObject);
     }
 
