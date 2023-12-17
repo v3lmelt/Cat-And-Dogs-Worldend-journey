@@ -11,7 +11,7 @@ public static class PlayerStatUtil
     public static readonly string[] SceneExcludeFromStatRestore = new string[]{"StartMenu", "Background Story", "GameplayScene",
         "Level1"};
     public static readonly string[] SceneExcludeFromStatRecord = new string[]{"StartMenu", "Background Story" };
-    private struct CatStats
+    public struct CatStats
     {
         public static int CurrentHealth;
         public static int MaxHealth;
@@ -22,7 +22,7 @@ public static class PlayerStatUtil
         public static int AttackDamage;
     }
 
-    private struct DogStats
+    public   struct DogStats
     {
         public static int CurrentHealth;
         public static int MaxHealth;
