@@ -2942,6 +2942,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1825145936627907485, guid: c5bff4d18f136924f9d488884944e650, type: 3}
   m_PrefabInstance: {fileID: 445456164}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &445456169 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5911759041117590347, guid: c5bff4d18f136924f9d488884944e650, type: 3}
+  m_PrefabInstance: {fileID: 445456164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &498147438
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,57 +4171,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7154481532945958009, guid: e2439b0b3413d064e86b485e9b64d9f7, type: 3}
   m_PrefabInstance: {fileID: 1427107325}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1502259152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1502259154}
-  - component: {fileID: 1502259153}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1502259153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502259152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d33a580bfa4f34eb66e7fe71b5dcaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  remakeSceneName: GameplayScene
-  remakePoint: {x: 0, y: -3, z: 0}
-  cat: {fileID: 0}
-  dog: {fileID: 0}
-  Canvas_1: {fileID: 0}
-  CoinPrefab: {fileID: 6366805265611638024, guid: 17c5fc0d7a0067746aa988da39a83c7c, type: 3}
-  CoinNum: 0
---- !u!4 &1502259154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502259152}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8475087, y: -0.16132729, z: 4.45039}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1593227929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4840,7 +4794,7 @@ PrefabInstance:
     - target: {fileID: 8726709702517395256, guid: ed3b2117ae7513949b06f33cd21df288, type: 3}
       propertyPath: gameCanvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 445456169}
     m_RemovedComponents:
     - {fileID: 8339133038311504456, guid: ed3b2117ae7513949b06f33cd21df288, type: 3}
     m_RemovedGameObjects: []
@@ -4906,6 +4860,5 @@ SceneRoots:
   - {fileID: 655518498}
   - {fileID: 1593227929}
   - {fileID: 1158194918}
-  - {fileID: 1502259154}
   - {fileID: 14508536}
   - {fileID: 1062751424}
